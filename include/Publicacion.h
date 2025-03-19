@@ -5,9 +5,11 @@
 #include <iostream>
 #include "DTFecha.h"
 #include "DTRefer.h"
-// #include "Investigador.h " diagrama doble flecha
+#include "Investigador.h "
 
 class DTFecha; // Para que compile sin necesidad de DTFecha
+class Investigador;
+class DTRefer;
 
 class Publicacion
 {

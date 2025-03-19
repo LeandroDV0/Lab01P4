@@ -17,7 +17,7 @@ public:
     PaginaWeb();
     ~PaginaWeb();
     PaginaWeb(std::string, std::string);
-    bool contienePalabra(std::string);
+    virtual bool contienePalabra(std::string);
     std::string getURL();
     std::string getContenidoExtraido();
     void setURL(std::string);

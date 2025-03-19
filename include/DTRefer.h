@@ -3,7 +3,7 @@
 
 #include <string>
 #include <iostream>
-#include <map>
+#include <set>
 #include "DTFecha.h"
 
 class DTFecha;
@@ -14,16 +14,16 @@ private:
 	std::string DOI;
 	std::string titulo;
 	DTFecha fecha;
-	std::map<int, std::string> autores;
+	std::set<std::string> autores;
 
-public:
+public: // A los datatypes no se le pueden cambiar valores, asi que elimine los setters
 	DTRefer();
+	DTRefer(std::string, std::string, DTFecha, std::set<std::string>);
 	~DTRefer();
-	void setFecha(DTFecha);
-	void setTitulo(std::string);
 	std::string getDOI();
 	std::string getTitulo();
 	DTFecha getFecha();
+	std::set<std::string> getAutores();
 };
 
 #endif

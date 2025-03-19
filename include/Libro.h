@@ -3,6 +3,7 @@
 
 #include <string>
 #include <iostream>
+#include <set>
 #include "DTFecha.h"
 #include "DTRefer.h"
 #include "Publicacion.h"
@@ -11,14 +12,17 @@ class Libro : public Publicacion
 {
 private:
     std::string editorial;
-    // crear lista palabras destacadas
-    //  void setPalabrasDestacadas(string);
+    std::set<std::string> palabrasDestacadas;
+
 public:
     Libro();
     ~Libro();
-    Libro(std::string);
-    std::string getEditorial(std::string);
-    bool contienePalabra(std::string);
+    Libro(std::string, std::set<std::string>);
+    std::string getEditorial();
+    std::set<std::string> getPalabrasDestacadas();
+    void setEditorial(std::string);
+    void setPalabrasDestacadas(std::set<std::string>); // Esto capaz que requiere cambios para una implementacion
+    virtual bool contienePalabra(std::string);
 };
 
 #endif
