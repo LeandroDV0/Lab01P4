@@ -17,7 +17,7 @@ public:
     ArticuloRevista();
     ~ArticuloRevista();
     ArticuloRevista(std::string, std::string);
-    bool contienePalabra(std::string);
+    virtual bool contienePalabra(std::string);
     std::string getRevista();
     std::string getExtracto();
     void setRevista(std::string);
