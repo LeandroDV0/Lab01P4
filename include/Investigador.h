@@ -8,6 +8,8 @@
 #include "DTRefer.h"
 // #include "Publicacion.h" diagrama doble flecha
 
+class Publicacion;
+
 class Investigador
 {
 private:
@@ -19,6 +21,7 @@ public:
     Investigador();
     ~Investigador();
     Investigador(std::string, std::string, std::string);
+    
     std::string toString();
     std::set<Publicacion> listaPublicaciones(DTFecha, std::string);
 
