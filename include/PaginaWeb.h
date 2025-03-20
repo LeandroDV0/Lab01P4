@@ -12,16 +12,15 @@ class PaginaWeb : public Publicacion
 private:
     std::string URL;
     std::string contenidoExtraido;
-
 public:
     PaginaWeb();
     ~PaginaWeb();
-    PaginaWeb(std::string, std::string);
-    virtual bool contienePalabra(std::string);
+    PaginaWeb(const std::string& , const std::string& );
+    virtual bool contienePalabra(const std::string& );
     std::string getURL();
     std::string getContenidoExtraido();
-    void setURL(std::string);
-    void setContenidoExtraido(std::string);
+    void setURL(const std::string&);
+    void setContenidoExtraido(const std::string&);
 };
 
 #endif
