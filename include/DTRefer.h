@@ -6,8 +6,6 @@
 #include <set>
 #include "DTFecha.h"
 
-class DTFecha;
-
 class DTRefer
 {
 private:
