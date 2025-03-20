@@ -8,8 +8,6 @@ PaginaWeb ::PaginaWeb()
 
 PaginaWeb ::~PaginaWeb()
 {
-    delete[] URL;
-    delete[] contenidoExtraido; // Estas borrando algo que no es objeto
 }
 
 PaginaWeb ::PaginaWeb(const std::string &URL, const std::string &contenidoExtraido)

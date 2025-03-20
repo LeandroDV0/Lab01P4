@@ -5,7 +5,7 @@
 #include <iostream>
 #include "DTFecha.h"
 #include "DTRefer.h"
-#include "Investigador.h "
+#include "Investigador.h"
 
 class Investigador; // Ya que investigador va a referenciar a Publicacion, defino investigador aca para que no haya problemas
 class DTRefer;
