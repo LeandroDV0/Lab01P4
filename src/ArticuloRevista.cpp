@@ -1,11 +1,11 @@
 #include "../include/ArticuloRevista.h"
 
 
-ArticuloRevista(){
+ArticuloRevista :: ArticuloRevista(){
 
 }
 
-~ArticuloRevista(){
+ArticuloRevista :: ~ArticuloRevista(){
 
 }
 
