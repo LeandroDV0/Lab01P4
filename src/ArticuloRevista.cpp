@@ -22,22 +22,22 @@ std::string getExtracto(){
     return this->extracto;
 }
 
-void setRevista(std::string rev){
+void ArticuloRevista :: setRevista(std::string rev){
     return this->revista = rev;
 }
 
-void setExtracto(std::string ext){
+void ArticuloRevista :: setExtracto(std::string ext){
     return this->extracto = ext;
 }
 
-/* bool contienePalabra(std::string palabra){
+/* bool ArticuloRevista :: contienePalabra(std::string palabra){
     if (extracto.find(palabra) != std::string::npos) {
         return true;
     }
         return false;
 }*/
 
-bool contienePalabra(std::string& palabra){
+bool ArticuloRevista :: contienePalabra(std::string& palabra){
         int palabraLargo = palabra.length();
         int extractoLargo = extracto.length();
 
