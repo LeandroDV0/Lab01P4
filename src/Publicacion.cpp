@@ -39,12 +39,18 @@ void Publicacion::setFecha(DTFecha fecha)
     this->fecha = fecha;
 }
 
-std::string Publicacion::getDOI()
+void Publicacion::setDOI(std::string DOI)
 {
-    return this->DOI;
+    this->DOI = DOI;
 }
 
-std::string Publicacion::getTitulo()
+void Publicacion::setTitulo(std::string titulo)
 {
-    return this->titulo;
+    this->titulo = titulo;
+}
+
+// No se declara una implementacion para un metodo abstracto puro (contienePalabra).
+
+DTRefer Publicacion::getDT()
+{
 }

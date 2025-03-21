@@ -21,7 +21,8 @@ DTRefer::DTRefer(std::string DOI, std::string titulo, DTFecha fecha, std::set<st
 DTRefer::~DTRefer()
 {
     this->fecha.~DTFecha();
-    // Investigar como eliminar bien todos los elementos del set
+
+    // no es necesario borrar el set porque fue creado estaticamente
 }
 
 std::string DTRefer::getDOI()
