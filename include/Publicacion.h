@@ -28,7 +28,7 @@ public:
     std::string getTitulo();
     void setDOI(std::string);
     void setTitulo(std::string);
-    void setFecha(std::string);
+    void setFecha(DTFecha);
 };
 // el .h parece correcto
 #endif
