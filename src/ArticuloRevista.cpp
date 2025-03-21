@@ -1,43 +1,43 @@
 #include "../include/ArticuloRevista.h"
 
 
-ArticuloRevista(){
+ArticuloRevista :: ArticuloRevista(){
 
 }
 
-~ArticuloRevista(){
+ArticuloRevista :: ~ArticuloRevista(){
 
 }
 
-ArticuloRevista::ArticuloRevista(std::string rev, std::string ext){
+ArticuloRevista :: ArticuloRevista(std::string rev, std::string ext){
     this->revista = rev;
     this->extracto = ext;
 }
 
-std::string getRevista(){
+std::string ArticuloRevista :: getRevista(){
     return this->revista ;
 }
 
-std::string getExtracto(){
+std::string ArticuloRevista :: getExtracto(){
     return this->extracto;
 }
 
-void setRevista(std::string rev){
+void ArticuloRevista :: setRevista(std::string rev){
     return this->revista = rev;
 }
 
-void setExtracto(std::string ext){
+void ArticuloRevista :: setExtracto(std::string ext){
     return this->extracto = ext;
 }
 
-/* bool contienePalabra(std::string palabra){
+/* bool ArticuloRevista :: contienePalabra(std::string palabra){
     if (extracto.find(palabra) != std::string::npos) {
         return true;
     }
         return false;
 }*/
 
-bool contienePalabra(std::string& palabra){
+bool ArticuloRevista :: contienePalabra(std::string& palabra){
         int palabraLargo = palabra.length();
         int extractoLargo = extracto.length();
 
