@@ -11,12 +11,11 @@ class ArticuloRevista : public Publicacion
 {
 private:
     std::string revista;
-    std::string extracto;
-
+    std::string extracto;  
 public:
     ArticuloRevista();
     ~ArticuloRevista();
-    ArticuloRevista(std::string, std::string);
+    ArticuloRevista(std::string, std::string, DTfecha, std::string string, std::string);
     virtual bool contienePalabra(std::string);
     std::string getRevista();
     std::string getExtracto();
