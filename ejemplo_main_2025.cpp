@@ -1,8 +1,15 @@
+#include "include/Publicacion.h"      // Para la clase abstracta y sus clases derivadas
+#include "include/ArticuloRevista.h"  // Si tienes un archivo separado para cada clase derivada
+#include "include/Libro.h"
+#include "include/PaginaWeb.h"
+#include "include/Investigador.h"      // Para la clase Investigador
+#include <string>             // Por el uso de std::string en las definiciones de clase
+#include <vector>             // Si estás usando vectores
+#include <iostream>           // Para operaciones de entrada/salida
+#include <set>                // Si usas conjuntos en alguna parte
 
-#include <iostream>
 #include <list>
 #include <map>
-#include "include/Publicacion.h"
 
 std::list<Publicacion *> publicaciones;
 std::map<std::string, Publicacion *> map_publicaciones;
@@ -39,9 +46,17 @@ Publicacion *coleccion_getPublicacion(std::string DOI)
 	return map_publicaciones[DOI];
 }
 
-void parte_a()
-{
+void parte_a(){
+	DTFecha fecha1 = DTFecha(15,5,2023);
+	ArticuloRevista* art1 = new ArticuloRevista("10.1234/abc123", "Fundamentos de POO", fecha1, "Programación Avanzada", 
+                                                "Introduccion a los principios fundamentales de la programacion orientada a objetos, explicando sus conceptos clave como clases, objetos, herencia y polimorfismo.");
+	DTFecha fecha2 = DTFecha(10,2,2024);
+	ArticuloRevista* art2 = new ArticuloRevista("10.4567/jkl012", "Utilidad de diagramas UML", fecha2, "Modelado de Software", 
+                                                "Ejercicio empirico de como los diagramas UML pueden ayudar en el proceso y documentacion de software, cubriendo los tipos mas importantes utilizados, como clases.");
+	publicaciones.push_back(art1); // esto agrega a la 'cola' el articulo
+	publicaciones.push_back(art2);
 }
+
 
 void parte_b()
 {
