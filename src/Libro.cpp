@@ -71,8 +71,8 @@ void Libro::setEditorial(std::string nuevaEditorial) {
 }
 
 bool contienePalabra(std::string palabra){
-    for ( std::string destacada : palabrasDestacadas) { // recorre todos los elementos del conjunto palabrasDestacadas. En cada iteracion destacada tomara el valor de una palabra dentro de palabrasDestacadas. Desventaja crea una copia  si usas const &auto detacada hace una referencia
-        if (destacada == palabra) { 
+    for ( std::string destacada : palabrasDestacadas) { // recorre todos los elementos del conjunto palabrasDestacadas.
+        if (destacada == palabra) { // Distingue entre mayusculas y minusculas
             return true; 
         }
     }
