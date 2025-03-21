@@ -9,16 +9,16 @@ ArticuloRevista :: ~ArticuloRevista(){
 
 }
 
-ArticuloRevista::ArticuloRevista(std::string rev, std::string ext){
+ArticuloRevista :: ArticuloRevista(std::string rev, std::string ext){
     this->revista = rev;
     this->extracto = ext;
 }
 
-std::string getRevista(){
+std::string ArticuloRevista :: getRevista(){
     return this->revista ;
 }
 
-std::string getExtracto(){
+std::string ArticuloRevista :: getExtracto(){
     return this->extracto;
 }
 
