@@ -53,4 +53,5 @@ void Publicacion::setTitulo(std::string titulo)
 
 DTRefer Publicacion::getDT()
 {
+    return DTRefer(this->DOI, this->titulo, this->fecha, this->autores);
 }

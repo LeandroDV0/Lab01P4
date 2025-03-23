@@ -41,5 +41,6 @@ DTFecha DTRefer::getFecha()
 }
 
 std::set<std::string> DTRefer::getAutores()
-{ // este tiene cositas
+{
+    return this->autores;
 }

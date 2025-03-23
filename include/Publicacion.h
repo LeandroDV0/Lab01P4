@@ -16,13 +16,14 @@ private:
     std::string DOI;
     std::string titulo;
     DTFecha fecha;
+    std::set<std::string> autores;
 
 public:
     Publicacion();
     ~Publicacion();
     Publicacion(std::string, std::string, DTFecha);
     DTRefer getDT();
-    virtual bool contienePalabra(std::string){}; // operacion abstracta
+    virtual bool contienePalabra(std::string) = 0; // operacion abstracta
     DTFecha getFecha();
     std::string getDOI();
     std::string getTitulo();
