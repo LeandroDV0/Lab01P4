@@ -40,6 +40,7 @@ bool Libro:: contienePalabra(std::string palabra){
 }
 
 //No diferencia mayuscula de minuscula
+/*
 bool Libro:: contienePalabra (std::string palabra){
     std::sritng mayuscula = string.upper(palabra); 
     for (const auto& destacada : palabrasDestacadas ){
@@ -50,6 +51,7 @@ bool Libro:: contienePalabra (std::string palabra){
     }
     return false;
 } 
+*/
 // si no podemos hacer strin.upper entonces hay que hacerlo con ASCII
     
 >>>>>>> 901bc37 (Actualizada Libro.cpp)
