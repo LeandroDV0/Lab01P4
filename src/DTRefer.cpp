@@ -44,3 +44,11 @@ std::set<std::string> DTRefer::getAutores()
 {
     return this->autores;
 }
+
+// Definición de la sobrecarga de <<
+std::ostream& operator<<(std::ostream& salida, const DTRefer& DT) {
+    DT.
+    
+    salida << "(" << p.x << ", " << p.y << ")";
+    return salida; // Permite concatenar más salidas como cout << p1 << " y " << p2;
+}
