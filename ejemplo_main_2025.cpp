@@ -65,8 +65,13 @@ void parte_a(){
 void parte_b()
 {
 	DTFecha fecha3 = DTFecha(20,8,2022);
-	Libro* libro1 = new Libro ("10.2345/def456", "Patrones de Diseno en c++", fecha3, "Software Design", "Diseno, OOP, Class")
-
+	Libro* libro1 = new Libro ("10.2345/def456", "Patrones de Diseno en c++", fecha3, "Software Design", "Diseno, OOP, Class");
+	
+	DTFecha fecha4 = DTFecha(20,8,2022);
+	Libro* libro2 = new Libro ("10.5678/mno345", "Guia de UML", fecha4, "IEEE", "Diagramas, UML, Software, Modelado");
+	
+	publicaciones.push_back(libro1);
+	publicaciones.push_back(libro2);
 }
 
 void parte_c()
