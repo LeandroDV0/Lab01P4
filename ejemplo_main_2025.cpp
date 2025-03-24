@@ -74,8 +74,8 @@ void parte_b(){
 }
 
 void parte_c(){
-DTFecha fecha5 = DTFecha(20,10,2024);
-	PaginaWeb* paginaWeb = new PaginaWeb("www.umlparaprincipiantes.com", "En esta pagina web se presenta una gui completa sobre los diagramas UML, abordando los diagramas de casos de uso, de clases, de secuencia y de actividades.", "10.3456/ghi789", "Diagramas para Principiantes", fecha5);
+	DTFecha fecha5 = DTFecha(20,10,2024);
+	PaginaWeb* paginaWeb = new PaginaWeb ("www.umlparaprincipiantes.com", "En esta pagina web se presenta una gui completa sobre los diagramas UML, abordando los diagramas de casos de uso, de clases, de secuencia y de actividades.", "10.3456/ghi789", "Diagramas para Principiantes", fecha5);
 	publicaciones.push_back(paginaWeb);
 }
 
