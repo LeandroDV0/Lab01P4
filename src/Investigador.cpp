@@ -1,6 +1,9 @@
-#include "Investigador.h"
+#include "../include/Investigador.h"
 
 #include <iostream>
+
+Investigador:: Investigador(){
+}
 
 Investigador::Investigador(std::string ORCID, std::string nombre, std::string institucion){
     this->ORCID = ORCID;
@@ -15,15 +18,15 @@ Investigador::~Investigador(){
     publicaciones.clear();
 }
 
-std::string Investigador:: getORCID() const{
+std::string Investigador:: getORCID(){
     return ORCID;
 }
 
-std::string Investigador:: getNombre() const{
+std::string Investigador:: getNombre(){
     return nombre;
 }
 
-std::string Investigador:: getInstitucion() const{
+std::string Investigador:: getInstitucion(){
     return institucion;
 }
 
