@@ -19,7 +19,7 @@ std::string Libro::getEditorial() {
 std::set<std::string> Libro::getPalabrasDestacadas(){
     return palabrasDestacadas;
 
-};
+}
 
 
 void Libro::setPalabrasDestacadas(std::set<std::string> nuevasPalabras) {
