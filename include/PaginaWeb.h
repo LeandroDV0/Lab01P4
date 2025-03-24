@@ -16,11 +16,11 @@ public:
     PaginaWeb();
     ~PaginaWeb();
     PaginaWeb( std::string , std::string, std::string, std::string, DTFecha );
-    virtual bool contienePalabra(const std::string& );
+    virtual bool contienePalabra(std::string );
     std::string getURL();
     std::string getContenidoExtraido();
-    void setURL(const std::string&);
-    void setContenidoExtraido(const std::string&);
+    void setURL(std::string);
+    void setContenidoExtraido(std::string);
 };
 
 #endif
