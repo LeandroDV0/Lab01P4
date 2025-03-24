@@ -38,7 +38,7 @@ bool Libro:: contienePalabra(std::string palabra){
     }
     return false; 
 }
-
+//muchas gracias federica
 //No diferencia mayuscula de minuscula
 /*
 bool Libro:: contienePalabra (std::string palabra){
