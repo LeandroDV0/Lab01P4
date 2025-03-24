@@ -89,8 +89,8 @@ void parte_d(){
 void parte_e(){
 	Investigador* Inv1 = new Investigador("0000-0003-1234-5678","Carla Oliveri","Universidad de la Republica");
 	Investigador* Inv2 = new Investigador("0000-0001-8765-4321","Alberto Santos","Instituto Tecnico");
-	publicaciones.push_back(Inv1);
-	publicaciones.push_back(Inv2);
+	investigadores.push_back(Inv1);
+	investigadores.push_back(Inv2);
 
 }
 
