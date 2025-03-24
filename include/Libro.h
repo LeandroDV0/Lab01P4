@@ -17,7 +17,7 @@ private:
 public:
     Libro();
     ~Libro();
-    Libro(std::string, std::set<std::string>);
+    Libro(std::string, std::string, DTFecha,std::string, std::set<std::string>);
     std::string getEditorial();
     std::set<std::string> getPalabrasDestacadas();
     void setEditorial(std::string);
