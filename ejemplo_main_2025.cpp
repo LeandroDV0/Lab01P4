@@ -79,16 +79,18 @@ void parte_c(){
 	publicaciones.push_back(paginaWeb);
 }
 
-void parte_d()
-{
+void parte_d(){
+	for (std::list<Publicacion*>::iterator it = publicaciones.begin(); it != publicaciones.end(); ++it){
+		DTRefer  ref = it.getTD();
+		std::cout << ref << std::endl;
+	}
 }
 
-void parte_e()
-{
+void parte_e(){
+
 }
 
-void parte_f()
-{
+void parte_f(){
 }
 
 void parte_g()
