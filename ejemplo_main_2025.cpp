@@ -81,7 +81,7 @@ void parte_c(){
 
 void parte_d(){
 	for (std::list<Publicacion*>::iterator it = publicaciones.begin(); it != publicaciones.end(); ++it){
-		DTRefer  ref = it.getDT();
+		DTRefer  ref = (*it)-> getDT();
 		std::cout << ref << std::endl;
 	}
 }
