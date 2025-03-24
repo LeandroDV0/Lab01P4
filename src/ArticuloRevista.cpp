@@ -9,7 +9,7 @@ ArticuloRevista :: ~ArticuloRevista(){
 
 }
 
-ArticuloRevista :: ArticuloRevista(std::string DOI, std::string titulo, DTFecha fecha, std::string rev, std::string ext): Publicion(DOI, titulo, fecha){
+ArticuloRevista :: ArticuloRevista(std::string DOI, std::string titulo, DTFecha fecha, std::string rev, std::string ext): Publicacion(DOI, titulo, fecha){
     this->revista = rev;
     this->extracto = ext;
 }
