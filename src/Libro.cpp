@@ -7,7 +7,7 @@ Libro :: Libro(){
 Libro :: ~Libro(){
 }
 
-Libro::Libro(std::string DOI, std::string titulo, DTFecha fecha, std::string editorial, std::set<std::string> palabrasDestacadas): Publicion(DOI, titulo, fecha) {
+Libro::Libro(std::string DOI, std::string titulo, DTFecha fecha, std::string editorial, std::set<std::string> palabrasDestacadas): Publicacion(DOI, titulo, fecha) {
     this->editorial = editorial;
     this->palabrasDestacadas = palabrasDestacadas; 
 }
@@ -19,7 +19,7 @@ std::string Libro::getEditorial() {
 std::set<std::string> Libro::getPalabrasDestacadas(){
     return palabrasDestacadas;
 
-};
+}
 
 
 void Libro::setPalabrasDestacadas(std::set<std::string> nuevasPalabras) {
