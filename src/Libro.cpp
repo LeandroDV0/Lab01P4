@@ -16,7 +16,7 @@ std::string Libro::getEditorial() {
     return editorial;
 }
 
-std::set<std::string> getPalabrasDestacadas(){
+std::set<std::string> Libro::getPalabrasDestacadas(){
     return palabrasDestacadas;
 
 };
