@@ -10,8 +10,7 @@ PaginaWeb ::~PaginaWeb()
 {
 }
 
-PaginaWeb ::PaginaWeb(const std::string &URL, const std::string &contenidoExtraido, std::string DOI, std::string titulo, DTFecha fecha):
-Publicacion(DOI, titulo, fecha)
+PaginaWeb ::PaginaWeb(const std::string &URL, const std::string &contenidoExtraido, std::string DOI, std::string titulo, DTFecha fecha): Publicacion(DOI, titulo, fecha)
 {
     this->URL = URL;
     this->contenidoExtraido = contenidoExtraido;
