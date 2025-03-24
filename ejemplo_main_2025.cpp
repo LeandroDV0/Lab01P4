@@ -10,6 +10,10 @@
 
 #include <list>
 #include <map>
+#include "include/DTFecha.h"
+#include "include/DTRefer.h"
+
+
 
 std::list<Publicacion *> publicaciones;
 std::map<std::string, Publicacion *> map_publicaciones;
@@ -60,6 +64,9 @@ void parte_a(){
 
 void parte_b()
 {
+	DTFecha fecha3 = DTFecha(20,8,2022);
+	Libro* libro1 = new Libro ("10.2345/def456", "Patrones de Diseno en c++", fecha3, "Software Design", "Diseno, OOP, Class")
+
 }
 
 void parte_c()
