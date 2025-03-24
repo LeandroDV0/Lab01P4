@@ -23,11 +23,11 @@ std::string ArticuloRevista :: getExtracto(){
 }
 
 void ArticuloRevista :: setRevista(std::string rev){  
-    return this->revista = rev;                               // al ser un void no deberia llevar return
+    this->revista = rev;                               // al ser un void no deberia llevar return
 }
 
 void ArticuloRevista :: setExtracto(std::string ext){
-    return this->extracto = ext;
+    this->extracto = ext;
 }
 
 /* bool ArticuloRevista :: contienePalabra(std::string palabra){
