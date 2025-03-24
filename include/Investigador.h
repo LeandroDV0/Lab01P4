@@ -16,7 +16,7 @@ private:
     std::string ORCID;
     std::string nombre;
     std::string institucion;
-
+    std::set<Publicacion*> publicaciones;
 public:
     Investigador();
     ~Investigador();
@@ -25,9 +25,9 @@ public:
     std::string toString();
     std::set<Publicacion> listaPublicaciones(DTFecha, std::string);
 
-    std::string getORCID();
-    std::string getNombre();
-    std::string getInstitucion();
+    std::string getORCID() const;
+    std::string getNombre() const;
+    std::string getInstitucion() const;
     void setORCID(std::string);
     void setInstitucion(std::string);
     void setNombre(std::string);

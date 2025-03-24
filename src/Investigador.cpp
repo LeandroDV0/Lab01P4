@@ -9,7 +9,10 @@ Investigador::Investigador(std::string ORCID, std::string nombre, std::string in
 }
 
 Investigador::~Investigador(){
-    publicaciones.clear;
+    for (Publicacion* pub: publicaciones){
+        delete pub;
+    }
+    publicaciones.clear();
 }
 
 std::string Investigador:: getORCID() const{
