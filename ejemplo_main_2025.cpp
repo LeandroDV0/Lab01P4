@@ -62,8 +62,7 @@ void parte_a(){
 }
 
 
-void parte_b()
-{
+void parte_b(){
 	DTFecha fecha3 = DTFecha(20,8,2022);
 	Libro* libro1 = new Libro ("10.2345/def456", "Patrones de Diseno en c++", fecha3, "Software Design", {"Diseno", "OOP", "Class"});
 	
@@ -74,8 +73,12 @@ void parte_b()
 	publicaciones.push_back(libro2);
 }
 
-void parte_c()
-{
+void parte_c(){
+DTFecha fecha5 = DTFecha(20,10,2024);
+	PaginaWb* paginaWeb = new PaginaWeb("www.umlparaprincipiantes.com", "En esta pagina web se presenta una gui completa sobre los diagramas UML, abordando los diagramas de casos de uso, de clases, de secuencia y de actividades.", "10.3456/ghi789", "Diagramas para Principiantes", 
+                                                "Introduccion a los principios fundamentales de la programacion orientada a objetos, explicando sus conceptos clave como clases, objetos, herencia y polimorfismo.");
+
+	publicaciones.push_back(paginaWeb);
 }
 
 void parte_d()
