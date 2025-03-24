@@ -23,7 +23,7 @@ public: // A los datatypes no se le pueden cambiar valores, asi que elimine los 
 	std::string getTitulo();
 	DTFecha getFecha();
 	std::set<std::string> getAutores();
-	//chat
+	
 	friend std::iostream& operator<<(std::iostream& salida, const DTRefer& DT);
 };
 
