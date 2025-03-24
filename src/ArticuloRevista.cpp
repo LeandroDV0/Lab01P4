@@ -22,8 +22,8 @@ std::string ArticuloRevista :: getExtracto(){
     return this->extracto;
 }
 
-void ArticuloRevista :: setRevista(std::string rev){
-    return this->revista = rev;
+void ArticuloRevista :: setRevista(std::string rev){  
+    return this->revista = rev;                               // al ser un void no deberia llevar return
 }
 
 void ArticuloRevista :: setExtracto(std::string ext){
@@ -37,8 +37,8 @@ void ArticuloRevista :: setExtracto(std::string ext){
         return false;
 }*/
 
-bool ArticuloRevista :: contienePalabra(std::string& palabra){
-        int palabraLargo = palabra.length();
+bool ArticuloRevista :: contienePalabra(std::string palabra){  // recomendacion, pasar los parametros como:
+        int palabraLargo = palabra.length();                   // contienePalabra(const std::string &palabra)
         int extractoLargo = extracto.length();
 
         if (palabraLargo == 0 || palabraLargo > extractoLargo) {
