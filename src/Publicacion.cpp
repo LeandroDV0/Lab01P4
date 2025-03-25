@@ -58,8 +58,8 @@ void Publicacion::setTitulo(string titulo)
 DTRefer Publicacion::getDT()
 {
     set <string> autores;
-    for (const Investigador* element : this->autores) {
-       autores.insert(element->getNombre());
+    for (const Investigador* aut : this->autores) {
+       autores.insert(aut->getNombre());
     }
     return DTRefer(this->DOI, this->titulo, this->fecha, autores);
 }

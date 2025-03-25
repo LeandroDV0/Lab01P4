@@ -48,11 +48,11 @@ std::set<std::string> DTRefer::getAutores()
 // Definición de la sobrecarga de <<
 std::ostream& operator<<(std::ostream& salida, DTRefer& DT) {
     std::string nombres = "";
-    for (const std::string& element : DT.getAutores()) {
+    for (const std::string& autor : DT.getAutores()) {
         if(nombres.empty()){
-            nombres = element;
+            nombres = autor;
         }else{
-            nombres = nombres+","+element;
+            nombres = nombres+","+autor;
         }
     }
     
