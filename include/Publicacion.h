@@ -10,27 +10,30 @@
 
 class Investigador; // Ya que investigador va a referenciar a Publicacion, defino investigador aca para que no haya problemas
 class DTRefer;
+using namespace std;
 
 class Publicacion
 {
 private:
-    std::string DOI;
-    std::string titulo;
+    string DOI;
+    string titulo;
     DTFecha fecha;
-    std::set<Investigador> autores;
+    set<Investigador> autores;
 
 public:
     Publicacion();
     ~Publicacion();
-    Publicacion(std::string, std::string, DTFecha);
+    Publicacion(string, string, DTFecha);
     DTRefer getDT();
-    virtual bool contienePalabra(std::string) = 0; // operacion abstracta
+    virtual bool contienePalabra(string) = 0; // operacion abstracta
     DTFecha getFecha();
-    std::string getDOI();
-    std::string getTitulo();
-    void setDOI(std::string);
-    void setTitulo(std::string);
+    string getDOI();
+    string getTitulo();
+    void setDOI(string);
+    void setTitulo(string);
     void setFecha(DTFecha);
+    void setAutores(set<Investigador>);
+    set<Investigador> getAutores();
 };
 // el .h parece correcto
 #endif
