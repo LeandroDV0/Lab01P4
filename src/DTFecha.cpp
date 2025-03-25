@@ -34,3 +34,7 @@ int DTFecha::get_anio()
 {
     return this->anio;
 }
+std::ostream& operator<<(std::ostream& os,  DTFecha& fecha) {
+    os << fecha.get_dia() << "/" << fecha.get_mes() << "/" << fecha.get_anio();
+    return os;
+}
