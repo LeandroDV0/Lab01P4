@@ -24,7 +24,8 @@ public: // A los datatypes no se le pueden cambiar valores, asi que elimine los 
 	DTFecha getFecha();
 	std::set<std::string> getAutores();
 	
-	friend std::iostream& operator<<(std::iostream& salida, const DTRefer& DT);
+	
 };
-
+//friend std::iostream& operator<<(std::iostream, DTRefer);
+std::ostream& operator<<(std::ostream&, DTRefer);
 #endif
