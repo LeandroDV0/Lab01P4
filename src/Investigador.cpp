@@ -1,5 +1,5 @@
 #include "Investigador.h"
-
+#include "Publicacion.h"
 #include <iostream>
 
 Investigador:: Investigador(){
@@ -20,6 +20,16 @@ Investigador:: Investigador(std::string ORCID, std::string nombre, std::string i
 
 std::string Investigador:: toString() const{
     return ORCID + "->" + nombre + "/" + institucion;
+}
+
+std::set<std::string> Investigador:: listaPublicaciones(DTFecha fecha, std::string pal) const{
+    std::set<std::string> resultado;
+    for (Publicacion* pub : publicaciones){
+        if (pub->getFecha() > fecha && pub->contienePalabra(pal)){
+            resultado.insert(pub->getDOI());
+        }
+    }
+    return resultado;
 }
 
 std::string Investigador:: getORCID() const{
@@ -44,4 +54,6 @@ void Investigador:: setInstitucion(std::string institucion){
     this->institucion = institucion;
 }
 
-void Investigador::agregarPublicacion
+void Investigador::agregarPublicacion(Publicacion* pub){
+    publicaciones.insert(pub);
+}

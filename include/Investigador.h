@@ -1,5 +1,5 @@
-#ifndef PAGINAWEB
-#define PAGINAWEB
+#ifndef INVESTIGADOR
+#define INVESTIGADOR
 
 #include <string>
 #include <iostream>
@@ -22,8 +22,8 @@ public:
     ~Investigador();
     Investigador(std::string, std::string, std::string);
     
-    std::string toString();
-    std::set<Publicacion> listaPublicaciones(DTFecha, std::string);
+    std::string toString() const;
+    std::set<std::string> listaPublicaciones(DTFecha, std::string) const;
 
     std::string getORCID() const;
     std::string getNombre() const;
@@ -31,6 +31,7 @@ public:
     void setORCID(std::string);
     void setInstitucion(std::string);
     void setNombre(std::string);
+    void agregarPublicacion(Publicacion*);
 };
 
 #endif

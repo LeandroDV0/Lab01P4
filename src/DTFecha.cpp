@@ -38,3 +38,10 @@ std::ostream& operator<<(std::ostream& os,  DTFecha& fecha) {
     os << fecha.get_dia() << "/" << fecha.get_mes() << "/" << fecha.get_anio();
     return os;
 }
+
+bool DTFecha::operator>(const DTFecha& otra) const {
+    if (anio != otra.anio) return anio > otra.anio;
+    if (mes != otra.mes) return mes > otra.mes;
+    return dia > otra.dia;
+}
+
