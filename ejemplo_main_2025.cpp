@@ -120,6 +120,18 @@ void parte_k()
 {
 }
 
+void cleanUp() {
+    for (Publicacion* pub : publicaciones) {
+        delete pub;
+    }
+    publicaciones.clear();
+
+    for (Investigador* inv : investigadores) {
+        delete inv;
+    }
+    investigadores.clear();
+}
+
 int main()
 {
 	std::cout << "parte_a" << std::endl;
