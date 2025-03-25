@@ -95,6 +95,9 @@ void parte_e(){
 }
 
 void parte_f(){
+	for (Investigador* inv: investigadores){
+		std::cout << inv->toString() << std::endl;
+	}
 }
 
 void parte_g()
