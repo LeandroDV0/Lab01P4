@@ -117,7 +117,7 @@ void parte_g()
 	coleccion_getPublicacion("10.4567/jkl012")->setAutores(autores); //Utilidad diagramas UML
 	coleccion_getPublicacion("10.5678/mno345")->agregarAutor(carla); //Guia UML
 	coleccion_getPublicacion("10.3456/ghi789")->agregarAutor(carla); //Diagramas para principiantes
-	coleccion_getPublicacion("10.2345/def456")->agregarAutor(alberto) //Patrones de diseno en c++
+	coleccion_getPublicacion("10.2345/def456")->agregarAutor(alberto); //Patrones de diseno en c++
 
 }
 
