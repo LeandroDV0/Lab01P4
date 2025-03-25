@@ -7,6 +7,7 @@
 #include <vector>
 #include "DTFecha.h"
 #include "DTRefer.h"
+using namespace std;
 // #include "Publicacion.h" diagrama doble flecha
 
 class Publicacion;

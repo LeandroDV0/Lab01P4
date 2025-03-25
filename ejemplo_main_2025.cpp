@@ -102,6 +102,7 @@ void parte_f(){
 
 void parte_g()
 {
+	
 }
 
 void parte_h()

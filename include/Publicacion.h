@@ -7,6 +7,7 @@
 #include "DTFecha.h"
 #include "DTRefer.h"
 #include "Investigador.h"
+using namespace std; //agregue esto para la parte g del main
 
 class Investigador; // Ya que investigador va a referenciar a Publicacion, defino investigador aca para que no haya problemas
 class DTRefer;
