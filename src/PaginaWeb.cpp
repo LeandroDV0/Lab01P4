@@ -2,15 +2,13 @@
 
 PaginaWeb ::PaginaWeb()
 {
-    URL = "";
-    contenidoExtraido = "";
 }
 
 PaginaWeb ::~PaginaWeb()
 {
 }
 
-PaginaWeb ::PaginaWeb(const std::string &URL, const std::string &contenidoExtraido)
+PaginaWeb ::PaginaWeb(std::string URL, std::string contenidoExtraido, std::string DOI, std::string titulo, DTFecha fecha): Publicacion(DOI, titulo, fecha)
 {
     this->URL = URL;
     this->contenidoExtraido = contenidoExtraido;
@@ -26,17 +24,17 @@ std::string PaginaWeb ::getContenidoExtraido()
     return contenidoExtraido;
 }
 
-void PaginaWeb ::setURL(const std::string &URL)
+void PaginaWeb ::setURL(std::string URL)
 {
     this->URL = URL;
 }
 
-void PaginaWeb::setContenidoExtraido(const std::string &contenidoExtraido)
+void PaginaWeb::setContenidoExtraido(std::string contenidoExtraido)
 {
     this->contenidoExtraido = contenidoExtraido;
 }
 
-bool PaginaWeb ::contienePalabra(const std::string &palabra)
+bool PaginaWeb ::contienePalabra( std::string palabra)
 { // se puede usar find()?
 
     int largoContenido = contenidoExtraido.length();

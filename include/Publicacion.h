@@ -16,7 +16,7 @@ private:
     std::string DOI;
     std::string titulo;
     DTFecha fecha;
-    std::set<std::string> autores;
+    std::set<Investigador> autores;
 
 public:
     Publicacion();

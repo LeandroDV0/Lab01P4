@@ -7,7 +7,7 @@ Libro :: Libro(){
 Libro :: ~Libro(){
 }
 
-Libro::Libro(std::string editorial, std::set<std::string> palabrasDestacadas) {
+Libro::Libro(std::string DOI, std::string titulo, DTFecha fecha, std::string editorial, std::set<std::string> palabrasDestacadas): Publicacion(DOI, titulo, fecha) {
     this->editorial = editorial;
     this->palabrasDestacadas = palabrasDestacadas; 
 }
@@ -16,10 +16,10 @@ std::string Libro::getEditorial() {
     return editorial;
 }
 
-std::set<std::string> getPalabrasDestacadas(){
+std::set<std::string> Libro::getPalabrasDestacadas(){
     return palabrasDestacadas;
 
-};
+}
 
 
 void Libro::setPalabrasDestacadas(std::set<std::string> nuevasPalabras) {
@@ -31,14 +31,14 @@ void Libro::setEditorial(std::string nuevaEditorial) {
 }
 
 bool Libro:: contienePalabra(std::string palabra){
-    for ( destacada : palabrasDestacadas) { // recorre todos los elementos del conjunto palabrasDestacadas.
+    for ( const auto& destacada : palabrasDestacadas) { // recorre todos los elementos del conjunto palabrasDestacadas.
         if (destacada == palabra) { // Distingue entre mayusculas y minusculas
             return true; 
         }
     }
     return false; 
 }
-
+//muchas gracias federica
 //No diferencia mayuscula de minuscula
 /*
 bool Libro:: contienePalabra (std::string palabra){

@@ -10,6 +10,10 @@
 
 #include <list>
 #include <map>
+#include "include/DTFecha.h"
+#include "include/DTRefer.h"
+
+
 
 std::list<Publicacion *> publicaciones;
 std::map<std::string, Publicacion *> map_publicaciones;
@@ -58,24 +62,39 @@ void parte_a(){
 }
 
 
-void parte_b()
-{
+void parte_b(){
+	DTFecha fecha3 = DTFecha(20,8,2022);
+	Libro* libro1 = new Libro ("10.2345/def456", "Patrones de Diseno en c++", fecha3, "Software Design", {"Diseno", "OOP", "Class"});
+	
+	DTFecha fecha4 = DTFecha(20,8,2022);
+	Libro* libro2 = new Libro ("10.5678/mno345", "Guia de UML", fecha4, "IEEE", {"Diagramas", "UML", "Software", "Modelado"});
+	
+	publicaciones.push_back(libro1);
+	publicaciones.push_back(libro2);
 }
 
-void parte_c()
-{
+void parte_c(){
+	DTFecha fecha5 = DTFecha(20,10,2024);
+	PaginaWeb* paginaWeb = new PaginaWeb ("www.umlparaprincipiantes.com", "En esta pagina web se presenta una gui completa sobre los diagramas UML, abordando los diagramas de casos de uso, de clases, de secuencia y de actividades.", "10.3456/ghi789", "Diagramas para Principiantes", fecha5);
+	publicaciones.push_back(paginaWeb);
 }
 
-void parte_d()
-{
+void parte_d(){
+	for (Publicacion* pub: publicaciones){
+		DTRefer  ref = pub-> getDT();
+		std::cout << ref << std::endl;
+	}
 }
 
-void parte_e()
-{
+void parte_e(){
+	Investigador* Inv1 = new Investigador("0000-0003-1234-5678","Carla Oliveri","Universidad de la Republica");
+	Investigador* Inv2 = new Investigador("0000-0001-8765-4321","Alberto Santos","Instituto Tecnico");
+	investigadores.push_back(Inv1);
+	investigadores.push_back(Inv2);
+
 }
 
-void parte_f()
-{
+void parte_f(){
 }
 
 void parte_g()

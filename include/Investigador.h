@@ -16,7 +16,7 @@ private:
     std::string ORCID;
     std::string nombre;
     std::string institucion;
-
+    std::set<Publicacion*> publicaciones;
 public:
     Investigador();
     ~Investigador();

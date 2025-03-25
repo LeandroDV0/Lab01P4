@@ -9,7 +9,7 @@ ArticuloRevista :: ~ArticuloRevista(){
 
 }
 
-ArticuloRevista :: ArticuloRevista(std::string DOI, std::string titulo, DTFecha fecha, std::string rev, std::string ext): Publicion(DOI, titulo, fecha){
+ArticuloRevista :: ArticuloRevista(std::string DOI, std::string titulo, DTFecha fecha, std::string rev, std::string ext): Publicacion(DOI, titulo, fecha){
     this->revista = rev;
     this->extracto = ext;
 }
@@ -22,12 +22,12 @@ std::string ArticuloRevista :: getExtracto(){
     return this->extracto;
 }
 
-void ArticuloRevista :: setRevista(std::string rev){
-    return this->revista = rev;
+void ArticuloRevista :: setRevista(std::string rev){  
+    this->revista = rev;                               // al ser un void no deberia llevar return
 }
 
 void ArticuloRevista :: setExtracto(std::string ext){
-    return this->extracto = ext;
+    this->extracto = ext;
 }
 
 /* bool ArticuloRevista :: contienePalabra(std::string palabra){
@@ -37,8 +37,8 @@ void ArticuloRevista :: setExtracto(std::string ext){
         return false;
 }*/
 
-bool ArticuloRevista :: contienePalabra(std::string& palabra){
-        int palabraLargo = palabra.length();
+bool ArticuloRevista :: contienePalabra(std::string palabra){  // recomendacion, pasar los parametros como:
+        int palabraLargo = palabra.length();                   // contienePalabra(const std::string &palabra)
         int extractoLargo = extracto.length();
 
         if (palabraLargo == 0 || palabraLargo > extractoLargo) {
