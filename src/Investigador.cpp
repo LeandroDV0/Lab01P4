@@ -58,7 +58,3 @@ void Investigador:: setInstitucion(std::string institucion){
 void Investigador::agregarPublicacion(Publicacion* pub){
     publicaciones.insert(pub);
 }
-
-void Investigador:: setPublicacion(Publicacion* pub){
-    this->PublicacionInvestigador.push_back(pub);
-}

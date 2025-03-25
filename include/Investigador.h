@@ -4,10 +4,8 @@
 #include <string>
 #include <iostream>
 #include <set>
-#include <vector>
 #include "DTFecha.h"
 #include "DTRefer.h"
-using namespace std;
 // #include "Publicacion.h" diagrama doble flecha
 
 class Publicacion;
@@ -19,7 +17,6 @@ private:
     std::string nombre;
     std::string institucion;
     std::set<Publicacion*> publicaciones;
-    vector<Publicacion*> PublicacionInvestigador;
 public:
     Investigador();
     ~Investigador();
@@ -35,7 +32,6 @@ public:
     void setInstitucion(std::string);
     void setNombre(std::string);
     void agregarPublicacion(Publicacion*);
-    void setPublicacion(Publicacion*);
 };
 
 #endif
