@@ -1,14 +1,8 @@
-#include "../include/Investigador.h"
+#include "Investigador.h"
 
 #include <iostream>
 
 Investigador:: Investigador(){
-}
-
-Investigador::Investigador(std::string ORCID, std::string nombre, std::string institucion){
-    this->ORCID = ORCID;
-    this->nombre = nombre;
-    this->institucion = institucion;
 }
 
 Investigador::~Investigador(){
@@ -18,20 +12,26 @@ Investigador::~Investigador(){
     publicaciones.clear();
 }
 
-std::string Investigador:: getORCID(){
+Investigador::Investigador(std::string ORCID, std::string nombre, std::string institucion){
+    this->ORCID = ORCID;
+    this->nombre = nombre;
+    this->institucion = institucion;
+}
+
+std::string Investigador:: toString() const{
+    return ORCID + "->" + nombre + "/" + institucion;
+}
+
+std::string Investigador:: getORCID() const{
     return ORCID;
 }
 
-std::string Investigador:: getNombre(){
+std::string Investigador:: getNombre() const{
     return nombre;
 }
 
-std::string Investigador:: getInstitucion(){
+std::string Investigador:: getInstitucion() const{
     return institucion;
-}
-
-std::string Investigador:: toString(){
-    return ORCID + "->" + nombre + "/" + institucion;
 }
 
 void Investigador::setORCID(std::string ORCID){
