@@ -5,14 +5,14 @@
 Investigador:: Investigador(){
 }
 
-Investigador::~Investigador(){
+Investigador:: ~Investigador(){
     for (Publicacion* pub: publicaciones){
         delete pub;
     }
     publicaciones.clear();
 }
 
-Investigador::Investigador(std::string ORCID, std::string nombre, std::string institucion){
+Investigador:: Investigador(std::string ORCID, std::string nombre, std::string institucion){
     this->ORCID = ORCID;
     this->nombre = nombre;
     this->institucion = institucion;
@@ -34,12 +34,14 @@ std::string Investigador:: getInstitucion() const{
     return institucion;
 }
 
-void Investigador::setORCID(std::string ORCID){
+void Investigador:: setORCID(std::string ORCID){
     this->ORCID = ORCID;
 }
-void Investigador::setNombre(std::string nombre){
+void Investigador:: setNombre(std::string nombre){
     this->nombre = nombre;
 }
-void Investigador::setInstitucion(std::string institucion){
+void Investigador:: setInstitucion(std::string institucion){
     this->institucion = institucion;
 }
+
+void Investigador::agregarPublicacion
