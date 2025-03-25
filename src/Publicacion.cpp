@@ -5,6 +5,8 @@ Publicacion ::Publicacion()
     this->DOI = "";
     this->titulo = "";
     this->fecha = DTFecha();
+    set<Investigador*> autores;
+    this->autores = autores;
 }
 
 Publicacion ::Publicacion(string DOI, string titulo, DTFecha fecha)
@@ -12,6 +14,8 @@ Publicacion ::Publicacion(string DOI, string titulo, DTFecha fecha)
     this->DOI = DOI;
     this->titulo = titulo;
     this->fecha = fecha;
+    set<Investigador*> autores;
+    this->autores = autores;
 }
 
 Publicacion ::~Publicacion()
@@ -54,16 +58,20 @@ void Publicacion::setTitulo(string titulo)
 DTRefer Publicacion::getDT()
 {
     set <string> autores;
-    for (const Investigador& element : this->autores) {
-       autores.insert(element.getNombre());
+    for (const Investigador* element : this->autores) {
+       autores.insert(element->getNombre());
     }
     return DTRefer(this->DOI, this->titulo, this->fecha, autores);
 }
 
-void Publicacion::setAutores(set<Investigador> autores){
+void Publicacion::setAutores(set<Investigador*> autores){
     this->autores = autores;
 }
 
-set<Investigador> Publicacion::getAutores(){
+set<Investigador*> Publicacion::getAutores(){
     return this->autores;
+}
+
+void Publicacion::agregarAutor(Investigador* inv){
+    this->autores.insert(inv);
 }

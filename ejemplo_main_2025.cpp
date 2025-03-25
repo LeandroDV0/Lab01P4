@@ -57,8 +57,10 @@ void parte_a(){
 	DTFecha fecha2 = DTFecha(10,2,2024);
 	ArticuloRevista* art2 = new ArticuloRevista("10.4567/jkl012", "Utilidad de diagramas UML", fecha2, "Modelado de Software", 
                                                 "Ejercicio empirico de como los diagramas UML pueden ayudar en el proceso y documentacion de software, cubriendo los tipos mas importantes utilizados, como clases.");
-	publicaciones.push_back(art1); // esto agrega a la 'cola' el articulo
-	publicaciones.push_back(art2);
+	//publicaciones.push_back(art1); // esto agrega a la 'cola' el articulo
+	//publicaciones.push_back(art2); //Leandro: Dejo esto comentado porque voy a poner las funciones del main
+	coleccion_guardarPublicacion(art1);
+	coleccion_guardarPublicacion(art2);
 }
 
 
@@ -69,14 +71,18 @@ void parte_b(){
 	DTFecha fecha4 = DTFecha(20,8,2022);
 	Libro* libro2 = new Libro ("10.5678/mno345", "Guia de UML", fecha4, "IEEE", {"Diagramas", "UML", "Software", "Modelado"});
 	
-	publicaciones.push_back(libro1);
-	publicaciones.push_back(libro2);
+	//publicaciones.push_back(libro1);
+	//publicaciones.push_back(libro2); //Leandro: Dejo esto comentado porque voy a poner las funciones del main
+
+	coleccion_guardarPublicacion(libro1);
+	coleccion_guardarPublicacion(libro2);
 }
 
 void parte_c(){
 	DTFecha fecha5 = DTFecha(20,10,2024);
-	PaginaWeb* paginaWeb = new PaginaWeb ("www.umlparaprincipiantes.com", "En esta pagina web se presenta una gui completa sobre los diagramas UML, abordando los diagramas de casos de uso, de clases, de secuencia y de actividades.", "10.3456/ghi789", "Diagramas para Principiantes", fecha5);
-	publicaciones.push_back(paginaWeb);
+	PaginaWeb* pagina = new PaginaWeb ("www.umlparaprincipiantes.com", "En esta pagina web se presenta una gui completa sobre los diagramas UML, abordando los diagramas de casos de uso, de clases, de secuencia y de actividades.", "10.3456/ghi789", "Diagramas para Principiantes", fecha5);
+	//publicaciones.push_back(paginaWeb);
+	coleccion_guardarPublicacion(pagina);
 }
 
 void parte_d(){
@@ -102,6 +108,17 @@ void parte_f(){
 
 void parte_g()
 {
+	set<Investigador*> autores;
+	Investigador* carla = coleccion_getInvestigador("0000-0003-1234-5678");
+	Investigador* alberto = coleccion_getInvestigador("0000-0001-8765-4321");
+
+	autores.insert(carla); autores.insert(alberto);
+	coleccion_getPublicacion("10.1234/abc123")->setAutores(autores); //Fundamentos de POO
+	coleccion_getPublicacion("10.4567/jkl012")->setAutores(autores); //Utilidad diagramas UML
+	coleccion_getPublicacion("10.5678/mno345")->agregarAutor(carla); //Guia UML
+	coleccion_getPublicacion("10.3456/ghi789")->agregarAutor(carla); //Diagramas para principiantes
+	coleccion_getPublicacion("10.2345/def456")->agregarAutor(alberto) //Patrones de diseno en c++
+
 }
 
 void parte_h()
