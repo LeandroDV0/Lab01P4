@@ -16,6 +16,7 @@ public:
     int get_dia();
     int get_mes();
     int get_anio();
+    std::ostream& operator<<(std::ostream& , DTFecha);
 };
 
 #endif
