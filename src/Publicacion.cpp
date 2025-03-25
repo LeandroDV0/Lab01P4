@@ -59,3 +59,7 @@ DTRefer Publicacion::getDT()
     }
     return DTRefer(this->DOI, this->titulo, this->fecha, autores);
 }
+
+void Publicacion:: setInvestigador(Investigador* inv){
+    this->InvestigadorPublicacion.push_back(inv);
+}

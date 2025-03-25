@@ -3,6 +3,7 @@
 
 #include <string>
 #include <iostream>
+#include <vector>
 #include "DTFecha.h"
 #include "DTRefer.h"
 #include "Investigador.h"
@@ -17,6 +18,7 @@ private:
     std::string titulo;
     DTFecha fecha;
     std::set<Investigador> autores;
+    vector<Investigador*> InvestigadorPublicacion; //agregue esto para la parte g del main
 
 public:
     Publicacion();
@@ -30,6 +32,7 @@ public:
     void setDOI(std::string);
     void setTitulo(std::string);
     void setFecha(DTFecha);
+    void setInvestigador(Investigador*); //agregue esto para la parte g del main
 };
 // el .h parece correcto
 #endif
