@@ -3,6 +3,7 @@
 
 #include <string>
 #include <iostream>
+#include "PaginaWeb.h"
 #include "DTFecha.h"
 #include "DTRefer.h"
 #include "Investigador.h"

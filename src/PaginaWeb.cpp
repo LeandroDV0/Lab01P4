@@ -2,6 +2,8 @@
 
 PaginaWeb ::PaginaWeb()
 {
+    URL = "";
+    contenidoExtraido = "";
 }
 
 PaginaWeb ::~PaginaWeb()
