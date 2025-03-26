@@ -21,7 +21,7 @@ private:
 
 public:
     Publicacion();
-    ~Publicacion();
+    virtual ~Publicacion();
     Publicacion(string, string, DTFecha);
     DTRefer getDT();
     virtual bool contienePalabra(string) = 0; // operacion abstracta
