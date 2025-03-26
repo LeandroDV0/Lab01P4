@@ -155,20 +155,13 @@ void parte_i()
 }
 
 
-void parte_j()
-{
+void parte_j(){
   
     Investigador *inv = coleccion_getInvestigador("0000-0003-1234-5678");
-
-    if (inv != nullptr)
-    {
-    
-        DTFecha fecha = DTFecha(1, 1, 2020); // Fecha 1/1/2020
-        std::set<std::string> res = inv->listaPublicaciones(fecha, "UML"); // Llamada a la función
-
-      
-        for (const std::string &pub : res) // Imprimir los DOIs
-        {
+    if (inv != nullptr){
+        DTFecha fecha = DTFecha(1, 1, 2020); 
+        std::set<std::string> res = inv->listaPublicaciones(fecha, "UML"); 
+        for (const std::string &pub : res) {
             std::cout << pub << std::endl;
         }
     }
