@@ -3,7 +3,6 @@
 
 #include <string>
 #include <iostream>
-#include "PaginaWeb.h"
 #include "DTFecha.h"
 #include "DTRefer.h"
 #include "Investigador.h"
@@ -18,7 +17,7 @@ private:
     string DOI;
     string titulo;
     DTFecha fecha;
-    set<Investigador*> autores;
+    set<Investigador *> autores;
 
 public:
     Publicacion();
@@ -32,9 +31,9 @@ public:
     void setDOI(string);
     void setTitulo(string);
     void setFecha(DTFecha);
-    void setAutores(set<Investigador*>);
-    set<Investigador*> getAutores();
-    void agregarAutor(Investigador*);
+    void setAutores(set<Investigador *>);
+    set<Investigador *> getAutores();
+    void agregarAutor(Investigador *);
 };
 // el .h parece correcto
 #endif

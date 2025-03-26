@@ -7,11 +7,14 @@
 #include "DTRefer.h"
 #include "Publicacion.h"
 
+class Publicacion;
+
 class ArticuloRevista : public Publicacion
 {
 private:
     std::string revista;
-    std::string extracto;  
+    std::string extracto;
+
 public:
     ArticuloRevista();
     ~ArticuloRevista();
