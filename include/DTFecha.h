@@ -8,6 +8,7 @@ class DTFecha
 {
 private:
     int dia, mes, anio;
+
 public:
     DTFecha();
     ~DTFecha();
@@ -15,7 +16,7 @@ public:
     int get_dia();
     int get_mes();
     int get_anio();
-    bool operator>(const DTFecha& otra) const;
+    bool operator>(const DTFecha &otra) const;
 };
-std::ostream& operator<<(std::ostream& , DTFecha);
+std::ostream &operator<<(std::ostream &, DTFecha);
 #endif
