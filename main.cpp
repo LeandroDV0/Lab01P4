@@ -138,7 +138,7 @@ void parte_h()
 	Investigador *inv = coleccion_getInvestigador("0000-0003-1234-5678");
 	if (inv != nullptr)
 	{
-		DTFecha fecha(10, 12, 2023);
+		DTFecha fecha = DTFecha(10, 12, 2023);
 		std::set<std::string> res = inv->listaPublicaciones(fecha, "UML");
 		for (const std::string &pub : res)
 		{
@@ -149,17 +149,23 @@ void parte_h()
 
 void parte_i()
 {
-	coleccion_getPublicacion("10.4567/jkl012")->~Publicacion();
+	Publicacion *aux = coleccion_getPublicacion("10.4567/jkl012");
 	coleccion_eliminarPublicacion(coleccion_getPublicacion("10.4567/jkl012"));
+	delete aux;
+	aux = nullptr;
 }
 
 void parte_j()
 {
+	cout << "llegue1" << endl;
 	Investigador *inv = coleccion_getInvestigador("0000-0003-1234-5678");
+
 	if (inv != nullptr)
 	{
-		DTFecha fecha(10, 12, 2023);
+		cout << "llegue2" << endl;
+		DTFecha fecha = DTFecha(1, 1, 2020);
 		std::set<std::string> res = inv->listaPublicaciones(fecha, "UML");
+		cout << "llegue3" << endl;
 		for (const std::string &pub : res)
 		{
 			std::cout << pub << std::endl;
