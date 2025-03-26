@@ -22,17 +22,18 @@ Publicacion ::~Publicacion()
 {
     this->fecha.~DTFecha();
 
-    for (Investigador *inv : this->getAutores())
+    /*for (Investigador *inv : this->getAutores())
     {
 
         for (Publicacion *pub : inv->getPublicaciones())
         {
             if (pub->getDOI() == this->getDOI())
             {
-                inv->getPublicaciones().erase(pub);
+                Publicacion *aux = inv->getPublicaciones().find(pub);
             }
         }
-    }
+    }*/
+    // En revision
 }
 
 DTFecha Publicacion::getFecha()

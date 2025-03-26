@@ -7,7 +7,7 @@ BIN_DIR = bin
 
 SRCS = $(wildcard $(SRC_DIR)/*.cpp)
 OBJS = $(patsubst $(SRC_DIR)/%.cpp, $(OBJ_DIR)/%.o, $(SRCS))
-MAIN = ejemplo_main_2025.cpp
+MAIN = main.cpp
 EXEC = $(BIN_DIR)/programa
 
 # Crear directorios si no existen

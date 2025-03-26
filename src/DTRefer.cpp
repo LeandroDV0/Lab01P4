@@ -5,7 +5,8 @@ DTRefer::DTRefer()
 {
     this->DOI = "";
     this->titulo = "";
-    DTFecha *titulo = new DTFecha();
+
+    this->fecha = DTFecha();
     std::set<std::string> autores;
     this->autores = autores;
 }

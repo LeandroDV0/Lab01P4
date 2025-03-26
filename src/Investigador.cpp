@@ -33,9 +33,12 @@ std::set<std::string> Investigador::listaPublicaciones(DTFecha fecha, std::strin
     std::set<std::string> resultado;
     for (Publicacion *pub : this->publicaciones)
     {
-        if (pub->getFecha() > fecha && pub->contienePalabra(pal))
+        if (pub != nullptr)
         {
-            resultado.insert(pub->getDOI());
+            if (pub->getFecha() > fecha && pub->contienePalabra(pal))
+            {
+                resultado.insert(pub->getDOI());
+            }
         }
     }
     return resultado;
