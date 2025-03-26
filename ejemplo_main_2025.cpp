@@ -127,6 +127,7 @@ void parte_h()
 
 void parte_i()
 {
+	coleccion_eliminarPublicacion(coleccion_getPublicacion("10.4567/jkl012"));
 }
 
 void parte_j()
