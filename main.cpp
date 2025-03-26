@@ -155,7 +155,7 @@ void parte_i()
 		{
 			for (auto& inv : map_investigadores)
 			{
-				inv eliminarPublicacion(aux); 
+				inv.second -> eliminarPublicacion(aux);
 			}
 			coleccion_eliminarPublicacion(aux);
 			aux = nullptr;
