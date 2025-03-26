@@ -44,18 +44,17 @@ bool PaginaWeb ::contienePalabra( std::string palabra)
 
     if (largoContenido >= largoPalabra)
     {
-        for (int i = 0; i <= largoContenido; i++)
+        for (int i = 0; i <= largoContenido-largoPalabra; i++)
         {
 
             int j = 0;
 
-            while ((j < largoPalabra) && (contenidoExtraido[i + j] == palabra[j])) // caracter por caracter
+            while (j < largoPalabra && contenidoExtraido[i + j] == palabra[j]) // caracter por caracter
                 j++;
 
             if (j == largoPalabra)
                 return true; // se encontro la palabra.
         }
     }
-    else
-        return false;
+   return false;
 }
