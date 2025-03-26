@@ -1,5 +1,5 @@
-#include "Investigador.h"
-#include "Publicacion.h"
+#include "../include/Investigador.h"
+#include "../include/Publicacion.h"
 #include <iostream>
 #include <vector>
 
