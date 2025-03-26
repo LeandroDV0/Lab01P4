@@ -123,6 +123,14 @@ void parte_g()
 
 void parte_h()
 {
+	Investigador* inv = coleccion_getInvestigador("0000-0003-1234-5678");
+	if (inv != nullptr){
+		DTFecha fecha(10, 12, 2023);
+		std::set<std::string> res  = inv->listaPublicaciones(fecha, "UML");
+		for (const std::string& pub : res) {
+            std::cout << pub << std::endl;
+        }
+	}
 }
 
 void parte_i()
