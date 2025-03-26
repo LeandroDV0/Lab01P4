@@ -22,10 +22,16 @@ Publicacion ::~Publicacion()
 {
     this->fecha.~DTFecha();
 
-    for (const Investigador *inv : this->getAutores())
+    for (Investigador *inv : this->getAutores())
     {
-        for (const Publicacion *pub : inv->getPublicaciones())
+        bool encontrado = false;
+        for (Publicacion *pub : inv->getPublicaciones())
         {
+            if (pub->getDOI() == this->getDOI())
+            {
+                inv->getPublicaciones().erase(pub);
+                encontrado = true;
+            }
         }
     }
 }
