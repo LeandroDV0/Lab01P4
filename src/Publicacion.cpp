@@ -24,13 +24,12 @@ Publicacion ::~Publicacion()
 
     for (Investigador *inv : this->getAutores())
     {
-        bool encontrado = false;
+
         for (Publicacion *pub : inv->getPublicaciones())
         {
             if (pub->getDOI() == this->getDOI())
             {
                 inv->getPublicaciones().erase(pub);
-                encontrado = true;
             }
         }
     }

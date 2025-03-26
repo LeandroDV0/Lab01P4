@@ -46,17 +46,21 @@ std::set<std::string> DTRefer::getAutores()
 }
 
 // Definición de la sobrecarga de <<
-std::ostream& operator<<(std::ostream& salida, DTRefer& DT) {
+std::ostream &operator<<(std::ostream &salida, DTRefer &DT)
+{
     std::string nombres = "";
-    for (const std::string& autor : DT.getAutores()) {
-        if(nombres.empty()){
+    for (const std::string &autor : DT.getAutores())
+    {
+        if (nombres.empty())
+        {
             nombres = autor;
-        }else{
-            nombres = nombres+","+autor;
+        }
+        else
+        {
+            nombres = nombres + "," + autor;
         }
     }
-    
-    
-    salida << DT.getDOI() << "->" << DT.getTitulo() << "(" << DT.getFecha().get_dia() << "/" <<DT.getFecha().get_mes() << "/" << DT.getFecha().get_anio() << ")/" << nombres;
+
+    salida << DT.getDOI() << "->" << DT.getTitulo() << "(" << DT.getFecha().get_dia() << "/" << DT.getFecha().get_mes() << "/" << DT.getFecha().get_anio() << ")/" << nombres;
     return salida;
 }
