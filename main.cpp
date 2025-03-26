@@ -149,12 +149,19 @@ void parte_h()
 
 void parte_i()
 {
-    Publicacion *aux = coleccion_getPublicacion("10.4567/jkl012");
-    coleccion_eliminarPublicacion(aux);  // Eliminamos la publicación de la colección
- 
+	{
+		Publicacion *aux = coleccion_getPublicacion("10.4567/jkl012");
+		if (aux != nullptr)
+		{
+			for (auto& inv : map_investigadores)
+			{
+				inv eliminarPublicacion(aux); 
+			}
+			coleccion_eliminarPublicacion(aux);
+			aux = nullptr;
+		}
+	}
 }
-
-
 void parte_j(){
   
     Investigador *inv = coleccion_getInvestigador("0000-0003-1234-5678");
