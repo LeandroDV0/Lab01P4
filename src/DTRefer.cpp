@@ -25,7 +25,7 @@ DTRefer::~DTRefer()
     // no es necesario borrar el set porque fue creado estaticamente
 }
 
-std::string DTRefer::getDOI()const
+std::string DTRefer::getDOI() const
 {
     return this->DOI;
 }
@@ -35,28 +35,32 @@ std::string DTRefer::getTitulo() const
     return this->titulo;
 }
 
-DTFecha DTRefer::getFecha()const
+DTFecha DTRefer::getFecha() const
 {
     return this->fecha;
 }
 
-std::set<std::string> DTRefer::getAutores()const
+std::set<std::string> DTRefer::getAutores() const
 {
     return this->autores;
 }
 
 // Definición de la sobrecarga de <<
-std::ostream& operator<<(std::ostream& salida, const DTRefer& DT) {
+std::ostream &operator<<(std::ostream &salida, const DTRefer &DT)
+{
     std::string nombres = "";
-    for (const std::string& autor : DT.getAutores()) {
-        if(nombres.empty()){
+    for (const std::string &autor : DT.getAutores())
+    {
+        if (nombres.empty())
+        {
             nombres = autor;
-        }else{
-            nombres = nombres+","+autor;
+        }
+        else
+        {
+            nombres = nombres + "," + autor;
         }
     }
-    
-    
-    salida << DT.getDOI() << "->" << DT.getTitulo() << "(" << DT.getFecha().get_dia() << "/" <<DT.getFecha().get_mes() << "/" << DT.getFecha().get_anio() << ")/" << nombres;
+
+    salida << DT.getDOI() << "->" << DT.getTitulo() << "(" << DT.getFecha().get_dia() << "/" << DT.getFecha().get_mes() << "/" << DT.getFecha().get_anio() << ")/" << nombres;
     return salida;
 }
