@@ -34,6 +34,7 @@ public:
     void setNombre(std::string);
     void agregarPublicacion(Publicacion *);
     std::set<Publicacion *> getPublicaciones();
+    void eliminarPublicacion(Publicacion *);
 };
 
 #endif
