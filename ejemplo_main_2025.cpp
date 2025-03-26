@@ -130,7 +130,6 @@ void parte_h()
 		for (const std::string& pub : res) {
             std::cout << pub << std::endl;
         }
-	}
 }
 
 void parte_i()
