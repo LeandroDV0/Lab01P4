@@ -18,10 +18,10 @@ public: // A los datatypes no se le pueden cambiar valores, asi que elimine los 
 	DTRefer();
 	DTRefer(std::string, std::string, DTFecha, std::set<std::string>);
 	~DTRefer();
-	std::string getDOI();
-	std::string getTitulo();
-	DTFecha getFecha();
-	std::set<std::string> getAutores();
+	std::string getDOI() const;
+	std::string getTitulo() const;
+	DTFecha getFecha() const;
+	std::set<std::string> getAutores() const;
 };
 // friend std::iostream& operator<<(std::iostream, DTRefer);
 std::ostream &operator<<(std::ostream &, DTRefer &);
