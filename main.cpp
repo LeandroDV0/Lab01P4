@@ -58,6 +58,7 @@ void parte_a()
 												"Ejercicio empirico de como los diagramas UML pueden ayudar en el proceso y documentacion de software, cubriendo los tipos mas importantes utilizados, como clases.");
 	// publicaciones.push_back(art1); // esto agrega a la 'cola' el articulo
 	// publicaciones.push_back(art2); //Leandro: Dejo esto comentado porque voy a poner las funciones del main
+
 	coleccion_guardarPublicacion(art1);
 	coleccion_guardarPublicacion(art2);
 }
@@ -153,25 +154,29 @@ void parte_i()
 		Publicacion *aux = coleccion_getPublicacion("10.4567/jkl012");
 		if (aux != nullptr)
 		{
-			for (auto& inv : map_investigadores)
+			for (auto &inv : map_investigadores) // Recorro el map con todos los investigadores eliminando la referencia a la publiacion de todos ellos
 			{
-				inv.second -> eliminarPublicacion(aux);
+				inv.second->eliminarPublicacion(aux);
 			}
 			coleccion_eliminarPublicacion(aux);
+			delete aux;
 			aux = nullptr;
 		}
 	}
 }
-void parte_j(){
-  
-    Investigador *inv = coleccion_getInvestigador("0000-0003-1234-5678");
-    if (inv != nullptr){
-        DTFecha fecha = DTFecha(1, 1, 2020); 
-        std::set<std::string> res = inv->listaPublicaciones(fecha, "UML"); 
-        for (const std::string &pub : res) {
-            std::cout << pub << std::endl;
-        }
-    }
+void parte_j()
+{
+
+	Investigador *inv = coleccion_getInvestigador("0000-0003-1234-5678");
+	if (inv != nullptr)
+	{
+		DTFecha fecha = DTFecha(1, 1, 2020);
+		std::set<std::string> res = inv->listaPublicaciones(fecha, "UML");
+		for (const std::string &pub : res)
+		{
+			std::cout << pub << std::endl;
+		}
+	}
 }
 
 void parte_k()
