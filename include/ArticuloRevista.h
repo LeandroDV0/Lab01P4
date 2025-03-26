@@ -18,7 +18,7 @@ private:
 public:
     ArticuloRevista();
     ~ArticuloRevista();
-    ArticuloRevista(std::string, std::string, DTFecha, std::string string, std::string);
+    ArticuloRevista(std::string, std::string, DTFecha, std::string , std::string);
     virtual bool contienePalabra(std::string);
     std::string getRevista();
     std::string getExtracto();
