@@ -14,7 +14,6 @@ private:
 	DTFecha fecha;
 	std::set<std::string> autores;
 
-
 public: // A los datatypes no se le pueden cambiar valores, asi que elimine los setters
 	DTRefer();
 	DTRefer(std::string, std::string, DTFecha, std::set<std::string>);
@@ -23,9 +22,7 @@ public: // A los datatypes no se le pueden cambiar valores, asi que elimine los 
 	std::string getTitulo();
 	DTFecha getFecha();
 	std::set<std::string> getAutores();
-	
-	
 };
-//friend std::iostream& operator<<(std::iostream, DTRefer);
-std::ostream& operator<<(std::ostream&, DTRefer);
+// friend std::iostream& operator<<(std::iostream, DTRefer);
+std::ostream &operator<<(std::ostream &, const DTRefer &);
 #endif
