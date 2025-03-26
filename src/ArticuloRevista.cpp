@@ -37,8 +37,8 @@ void ArticuloRevista :: setExtracto(std::string ext){
         return false;
 }*/
 
-bool ArticuloRevista :: contienePalabra(std::string palabra){  // recomendacion, pasar los parametros como:
-        int palabraLargo = palabra.length();                   // contienePalabra(const std::string &palabra)
+bool ArticuloRevista :: contienePalabra(std::string palabra){  
+        int palabraLargo = palabra.length();                   
         int extractoLargo = extracto.length();
 
         if (palabraLargo == 0 || palabraLargo > extractoLargo) {
