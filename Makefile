@@ -1,22 +1,28 @@
-CC = gcc
-CFLAGS = -Wall -Wextra -std=c98 -Iinclude
+CXX = g++
+CXXFLAGS = -Wall -std=c++98 -Iinclude
 SRC_DIR = src
+INCLUDE_DIR = include
 OBJ_DIR = obj
-BIN = programa
+BIN_DIR = bin
 
-SRCS := $(wildcard $(SRC_DIR)/*.c)
-OBJS := $(patsubst $(SRC_DIR)/%.c, $(OBJ_DIR)/%.o, $(SRCS))
+SRCS = $(wildcard $(SRC_DIR)/*.cpp)
+OBJS = $(patsubst $(SRC_DIR)/%.cpp, $(OBJ_DIR)/%.o, $(SRCS))
+MAIN = ejemplo_main_2025.cpp
+EXEC = $(BIN_DIR)/programa
 
-$(BIN): $(OBJS)
-	$(CC) $(CFLAGS) $^ -o $@
+# Crear directorios si no existen
+$(shell mkdir -p $(OBJ_DIR) $(BIN_DIR))
 
-$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c | $(OBJ_DIR)
-	$(CC) $(CFLAGS) -c $< -o $@
+all: $(EXEC)
 
-$(OBJ_DIR):
-	mkdir -p $(OBJ_DIR)
+$(EXEC): $(OBJS) $(MAIN)
+	$(CXX) $(CXXFLAGS) $(OBJS) $(MAIN) -o $(EXEC)
+
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp $(INCLUDE_DIR)/%.h
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:
-	rm -rf $(OBJ_DIR) $(BIN)
+	rm -rf $(OBJ_DIR)/*.o $(EXEC)
 
-.PHONY: clean
+run: all
+	./$(EXEC)
