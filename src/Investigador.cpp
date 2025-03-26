@@ -81,3 +81,8 @@ std::set<Publicacion *> Investigador::getPublicaciones()
 {
     return this->publicaciones;
 }
+
+void Investigador::eliminarPublicacion(Publicacion *pub)
+{
+    publicaciones.erase(pub); 
+}
