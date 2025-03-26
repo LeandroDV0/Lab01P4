@@ -136,6 +136,10 @@ void parte_j()
 
 void parte_k()
 {
+	for (Publicacion* pub: publicaciones){
+		DTRefer  ref = pub-> getDT();
+		std::cout << ref << std::endl;
+	}
 }
 
 void cleanUp() {
