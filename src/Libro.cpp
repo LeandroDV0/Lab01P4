@@ -38,6 +38,19 @@ bool Libro:: contienePalabra(std::string palabra){
     }
     return false; 
 }
+
+/*
+bool Libro:: contienePalabra(std::string palabra){
+    for (std::set <<std::string>::it = palabrasDestacadas.begin(); it!= palabrasDestacadas.end(); ++it ){
+         std::string destacada = *it
+        if (destacada == palabra) { // Distingue entre mayusculas y minusculas
+            return true; 
+        }
+    }
+    return false; 
+}
+*/
+
 //muchas gracias federica
 //No diferencia mayuscula de minuscula
 /*
