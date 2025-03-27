@@ -99,9 +99,9 @@ void parte_c()
 
 void parte_d()
 {
-	for (std::list<Publicacion *>::const_iterator it = publicaciones.begin(); it != publicaciones.end(); it++ )
+	for (std::list<Publicacion *>::const_iterator it = publicaciones.begin(); it != publicaciones.end(); it++)
 	{
-		Publicacion* pub = *it;
+		Publicacion *pub = *it;
 		DTRefer ref = pub->getDT();
 		std::cout << ref << std::endl;
 	}
@@ -119,7 +119,7 @@ void parte_f()
 {
 	for (std::list<Investigador *>::iterator it = investigadores.begin(); it != investigadores.end(); it++)
 	{
-		Investigador * inv = *it;
+		Investigador *inv = *it;
 		std::cout << inv->toString() << std::endl;
 	}
 }
@@ -154,7 +154,7 @@ void parte_h()
 	{
 		DTFecha fecha = DTFecha(10, 12, 2023);
 		std::set<std::string> res = inv->listaPublicaciones(fecha, "UML");
-		for (std::set<std::string>::const_iterator it = res.begin(); it != res.end(); it++ )
+		for (std::set<std::string>::const_iterator it = res.begin(); it != res.end(); it++)
 		{
 			std::cout << *it << std::endl;
 		}
@@ -167,12 +167,13 @@ void parte_i()
 		Publicacion *aux = coleccion_getPublicacion("10.4567/jkl012");
 		if (aux != NULL)
 		{
-			for (std::map<std::string, Investigador*>::iterator it = map_investigadores.begin(); it != map_investigadores.end(); ++it)
-	   		{
-				if(it->second != NULL){
-		  			it->second->eliminarPublicacion(aux);
+			for (std::map<std::string, Investigador *>::iterator it = map_investigadores.begin(); it != map_investigadores.end(); ++it)
+			{
+				if (it->second != NULL)
+				{
+					it->second->eliminarPublicacion(aux);
 				}
-	  		}
+			}
 
 			/*for (auto &inv : map_investigadores) // Recorro el map con todos los investigadores eliminando la referencia a la publiacion de todos ellos
 			{
@@ -201,30 +202,33 @@ void parte_j()
 
 void parte_k()
 {
-	for (std::list<Publicacion *>::const_iterator it = publicaciones.begin(); it != publicaciones.end(); it++ )
+	for (std::list<Publicacion *>::const_iterator it = publicaciones.begin(); it != publicaciones.end(); it++)
 	{
-		Publicacion* pub = *it;
-		if(pub != NULL){
+		Publicacion *pub = *it;
+		if (pub != NULL)
+		{
 			DTRefer ref = pub->getDT();
 			std::cout << ref << std::endl;
-		}else {
-            std::cout << "Publicación eliminada o nula" << std::endl;
-        }
+		}
+		else
+		{
+			std::cout << "Publicación eliminada o nula" << std::endl;
+		}
 	}
 }
 
 void cleanUp()
 {
-	for (std::list<Publicacion *>::iterator it = publicaciones.begin(); it != publicaciones.end(); it++ )
+	for (std::list<Publicacion *>::iterator it = publicaciones.begin(); it != publicaciones.end(); it++)
 	{
-		Publicacion * pub = *it;
+		Publicacion *pub = *it;
 		delete pub;
 	}
 	publicaciones.clear();
 
 	for (std::list<Investigador *>::iterator it = investigadores.begin(); it != investigadores.end(); it++)
 	{
-		Investigador * inv = *it;
+		Investigador *inv = *it;
 		delete inv;
 	}
 	investigadores.clear();
