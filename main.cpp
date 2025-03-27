@@ -193,15 +193,15 @@ void parte_k()
 
 void cleanUp()
 {
-	for (Publicacion *pub : publicaciones)
+	for (std::list<Publicacion *>::iterator it = publicaciones.begin(); it != publicaciones.end(); it++)
 	{
-		delete pub;
+		delete *it;
 	}
 	publicaciones.clear();
 
-	for (Investigador *inv : investigadores)
+	for (std::list<Investigador *>::iterator inv = investigadores.begin(); inv != investigadores.end(); inv++)
 	{
-		delete inv;
+		delete *inv;
 	}
 	investigadores.clear();
 }
