@@ -81,5 +81,7 @@ std::set<Publicacion *> Investigador::getPublicaciones()
 
 void Investigador::eliminarPublicacion(Publicacion *pub)
 {
-    publicaciones.erase(pub); // Si no esta pub, no pasa nada
+    if(pub != NULL){
+        publicaciones.erase(pub); // Si no esta pub, no pasa nada
+    }
 }

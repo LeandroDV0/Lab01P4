@@ -169,7 +169,9 @@ void parte_i()
 		{
 			for (std::map<std::string, Investigador*>::iterator it = map_investigadores.begin(); it != map_investigadores.end(); ++it)
 	   		{
-		  		it->second->eliminarPublicacion(aux);
+				if(it->second != NULL){
+		  			it->second->eliminarPublicacion(aux);
+				}
 	  		}
 
 			/*for (auto &inv : map_investigadores) // Recorro el map con todos los investigadores eliminando la referencia a la publiacion de todos ellos
@@ -202,11 +204,14 @@ void parte_k()
 	for (std::list<Publicacion *>::const_iterator it = publicaciones.begin(); it != publicaciones.end(); it++ )
 	{
 		Publicacion* pub = *it;
-		DTRefer ref = pub->getDT();
-		std::cout << ref << std::endl;
+		if(pub != NULL){
+			DTRefer ref = pub->getDT();
+			std::cout << ref << std::endl;
+		}else {
+            std::cout << "Publicación eliminada o nula" << std::endl;
+        }
 	}
 }
-
 
 void cleanUp()
 {
