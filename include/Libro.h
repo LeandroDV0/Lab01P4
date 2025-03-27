@@ -23,7 +23,6 @@ public:
     void setEditorial(std::string);
     void setPalabrasDestacadas(std::set<std::string>); // Esto capaz que requiere cambios para una implementacion
     virtual bool contienePalabra(std::string);
-    char convertidorMinuscula(char);
 };
 
 #endif

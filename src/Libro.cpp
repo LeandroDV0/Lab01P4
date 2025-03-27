@@ -29,30 +29,6 @@ void Libro::setPalabrasDestacadas(std::set<std::string> nuevasPalabras) {
 void Libro::setEditorial(std::string nuevaEditorial) {
     editorial = nuevaEditorial;
 }
-/*
-bool Libro:: contienePalabra(std::string palabra){
-    for ( const auto& destacada : palabrasDestacadas) { // recorre todos los elementos del conjunto palabrasDestacadas.
-        if (destacada == palabra) { // Distingue entre mayusculas y minusculas
-            return true; 
-        }
-    }
-    return false; 
-}
-*/
-/*
-bool Libro:: contienePalabra(std::string palabra){
-    for (std::set <<std::string>::it = palabrasDestacadas.begin(); it!= palabrasDestacadas.end(); ++it ){
-         std::string destacada = *it
-        if (destacada == palabra) { // Distingue entre mayusculas y minusculas
-            return true; 
-        }
-    }
-    return false; 
-}
-*/
-
-//muchas gracias federica
-//No diferencia mayuscula de minuscula
 
 bool Libro::contienePalabra(std::string palabra) {
     for (size_t i = 0; i < palabra.length(); i++) {
