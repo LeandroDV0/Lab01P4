@@ -70,12 +70,18 @@ void Publicacion::setTitulo(string titulo)
 
 DTRefer Publicacion::getDT()
 {
-    set<string> autores;
-    for (std::set<Investigador *>::const_iterator it = this->autores.begin(); it != this->autores.end(); it++)
+    std::set<std::string> autores;
+    for (std::set<Investigador *>::const_iterator it = this->autores.begin(); it != this->autores.end(); ++it)
     {
         Investigador* aut = *it;
-        autores.insert(aut->getNombre());
+        if (aut != NULL) {
+            autores.insert(aut->getNombre());
+        } else {
+            std::cout << "Advertencia: investigador nulo encontrado en los autores" << std::endl;
+        }
     }
+    
+    // Retornar el objeto DTRefer con los datos correspondientes
     return DTRefer(this->DOI, this->titulo, this->fecha, autores);
 }
 
