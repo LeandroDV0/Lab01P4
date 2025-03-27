@@ -58,6 +58,7 @@ void parte_a()
 												"Ejercicio empirico de como los diagramas UML pueden ayudar en el proceso y documentacion de software, cubriendo los tipos mas importantes utilizados, como clases.");
 	// publicaciones.push_back(art1); // esto agrega a la 'cola' el articulo
 	// publicaciones.push_back(art2); //Leandro: Dejo esto comentado porque voy a poner las funciones del main
+
 	coleccion_guardarPublicacion(art1);
 	coleccion_guardarPublicacion(art2);
 }
@@ -87,9 +88,8 @@ void parte_c()
 
 void parte_d()
 {
-	for (std::list<Publicacion *>::const_iterator it = publicaciones.begin(); it != publicaciones.end(); it++ )
+	for (Publicacion *pub : publicaciones)
 	{
-		Publicacion* pub = *it;
 		DTRefer ref = pub->getDT();
 		std::cout << ref << std::endl;
 	}
@@ -141,44 +141,48 @@ void parte_h()
 	{
 		DTFecha fecha = DTFecha(10, 12, 2023);
 		std::set<std::string> res = inv->listaPublicaciones(fecha, "UML");
-		for (std::set<std::string>::const_iterator it = res.begin(); it != res.end(); it++ )
+		for (const std::string &pub : res)
 		{
-			std::cout << *it << std::endl;
+			std::cout << pub << std::endl;
 		}
 	}
 }
 
 void parte_i()
 {
-	Publicacion *aux = coleccion_getPublicacion("10.4567/jkl012");
-	coleccion_eliminarPublicacion(coleccion_getPublicacion("10.4567/jkl012"));
-	delete aux;
-	aux = nullptr;
+	{
+		Publicacion *aux = coleccion_getPublicacion("10.4567/jkl012");
+		if (aux != nullptr)
+		{
+			for (auto &inv : map_investigadores) // Recorro el map con todos los investigadores eliminando la referencia a la publiacion de todos ellos
+			{
+				inv.second->eliminarPublicacion(aux);
+			}
+			coleccion_eliminarPublicacion(aux);
+			delete aux;
+			aux = nullptr;
+		}
+	}
 }
-
 void parte_j()
 {
-	cout << "llegue1" << endl;
-	Investigador *inv = coleccion_getInvestigador("0000-0003-1234-5678");
 
+	Investigador *inv = coleccion_getInvestigador("0000-0003-1234-5678");
 	if (inv != nullptr)
 	{
-		cout << "llegue2" << endl;
 		DTFecha fecha = DTFecha(1, 1, 2020);
 		std::set<std::string> res = inv->listaPublicaciones(fecha, "UML");
-		cout << "llegue3" << endl;
-		for (std::set<std::string>::const_iterator it = res.begin(); it != res.end(); it++)
+		for (const std::string &pub : res)
 		{
-			std::cout << *it << std::endl;
+			std::cout << pub << std::endl;
 		}
 	}
 }
 
 void parte_k()
 {
-	for (std::list<Publicacion *>::const_iterator it = publicaciones.begin(); it != publicaciones.end(); it++ )
+	for (Publicacion *pub : publicaciones)
 	{
-		Publicacion* pub = *it;
 		DTRefer ref = pub->getDT();
 		std::cout << ref << std::endl;
 	}

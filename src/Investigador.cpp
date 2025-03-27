@@ -12,7 +12,7 @@ Investigador::~Investigador()
     /*for (Publicacion *pub : publicaciones)
     {
         delete pub;
-    }*/
+    }*/ 
     publicaciones.clear();
 }
 
@@ -80,4 +80,9 @@ void Investigador::agregarPublicacion(Publicacion *pub)
 std::set<Publicacion *> Investigador::getPublicaciones()
 {
     return this->publicaciones;
+}
+
+void Investigador::eliminarPublicacion(Publicacion *pub)
+{
+    publicaciones.erase(pub); // Si no esta pub, no pasa nada
 }
