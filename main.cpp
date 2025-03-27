@@ -74,10 +74,10 @@ void parte_b()
 	Libro *libro1 = new Libro("10.2345/def456", "Patrones de Diseno en c++", fecha3, "Software Design", temas);
 
 	std::set<std::string> temas2;
-	temas.insert("Diagramas");
-	temas.insert("UML");
-	temas.insert("Software");
-	temas.insert("Modelado");
+	temas2.insert("Diagramas");
+	temas2.insert("UML");
+	temas2.insert("Software");
+	temas2.insert("Modelado");
 
 	DTFecha fecha4 = DTFecha(20, 8, 2022);
 	Libro *libro2 = new Libro("10.5678/mno345", "Guia de UML", fecha4, "IEEE", temas2);
