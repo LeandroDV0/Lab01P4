@@ -29,7 +29,7 @@ void Libro::setPalabrasDestacadas(std::set<std::string> nuevasPalabras) {
 void Libro::setEditorial(std::string nuevaEditorial) {
     editorial = nuevaEditorial;
 }
-
+/*
 bool Libro:: contienePalabra(std::string palabra){
     for ( const auto& destacada : palabrasDestacadas) { // recorre todos los elementos del conjunto palabrasDestacadas.
         if (destacada == palabra) { // Distingue entre mayusculas y minusculas
@@ -38,7 +38,7 @@ bool Libro:: contienePalabra(std::string palabra){
     }
     return false; 
 }
-
+*/
 /*
 bool Libro:: contienePalabra(std::string palabra){
     for (std::set <<std::string>::it = palabrasDestacadas.begin(); it!= palabrasDestacadas.end(); ++it ){
@@ -53,17 +53,23 @@ bool Libro:: contienePalabra(std::string palabra){
 
 //muchas gracias federica
 //No diferencia mayuscula de minuscula
-/*
-bool Libro:: contienePalabra (std::string palabra){
-    std::sritng mayuscula = string.upper(palabra); 
-    for (const auto& destacada : palabrasDestacadas ){
-        std::sritng mayuDest = string.upper(destacada);
-        if (mayuscula == mayuDest){
+
+bool Libro::contienePalabra(std::string palabra) {
+    for (size_t i = 0; i < palabra.length(); i++) {
+        palabra[i] = toupper(palabra[i]);
+    }
+    for (std::set<std::string>::iterator it = palabrasDestacadas.begin(); it != palabrasDestacadas.end(); ++it) {
+        std::string destacada = *it;
+        for (size_t i = 0; i < destacada.length(); i++) {
+            destacada[i] = toupper(destacada[i]);
+        }
+        if (palabra == destacada) {
             return true;
         }
     }
     return false;
-} 
-*/
+}
+
+
 // si no podemos hacer strin.upper entonces hay que hacerlo con ASCII
     
