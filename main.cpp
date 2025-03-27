@@ -66,10 +66,10 @@ void parte_a()
 void parte_b()
 {
 	DTFecha fecha3 = DTFecha(20, 8, 2022);
-	Libro *libro1 = new Libro("10.2345/def456", "Patrones de Diseno en c++", fecha3, "Software Design", {"Diseno", "OOP", "Class"});
+	Libro *libro1 = new Libro("10.2345/def456", "Patrones de Diseno en c++", fecha3, "Software Design", std::set<std::string>{"Diseno", "OOP", "Class"});
 
 	DTFecha fecha4 = DTFecha(20, 8, 2022);
-	Libro *libro2 = new Libro("10.5678/mno345", "Guia de UML", fecha4, "IEEE", {"Diagramas", "UML", "Software", "Modelado"});
+	Libro *libro2 = new Libro("10.5678/mno345", "Guia de UML", fecha4, "IEEE", std::set<std::string>{"Diagramas", "UML", "Software", "Modelado"});
 
 	// publicaciones.push_back(libro1);
 	// publicaciones.push_back(libro2); //Leandro: Dejo esto comentado porque voy a poner las funciones del main
@@ -159,6 +159,7 @@ void parte_i()
 	   		{
 		  		it->second->eliminarPublicacion(aux);
 	  		}
+
 			/*for (auto &inv : map_investigadores) // Recorro el map con todos los investigadores eliminando la referencia a la publiacion de todos ellos
 			{
 				inv.second->eliminarPublicacion(aux);
@@ -197,15 +198,15 @@ void parte_k()
 
 void cleanUp()
 {
-	for (std::list<Publicacion *>::iterator it = publicaciones.begin(); it != publicaciones.end(); it++)
+	for (Publicacion *pub : publicaciones)
 	{
-		delete *it;
+		delete pub;
 	}
 	publicaciones.clear();
 
-	for (std::list<Investigador *>::iterator inv = investigadores.begin(); inv != investigadores.end(); inv++)
+	for (Investigador *inv : investigadores)
 	{
-		delete *inv;
+		delete inv;
 	}
 	investigadores.clear();
 }
