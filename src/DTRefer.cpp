@@ -50,15 +50,17 @@ std::set<std::string> DTRefer::getAutores() const
 std::ostream &operator<<(std::ostream &salida, const DTRefer &DT)
 {
     std::string nombres = "";
-    for (const std::string &autor : DT.getAutores())
+    for (std::set<std::string>::const_iterator autor = DT.getAutores().begin(); autor != DT.getAutores().end(); autor++) /*(const std::string &autor : DT.getAutores())*/
     {
+
         if (nombres.empty())
         {
-            nombres = autor;
+            nombres = *autor;
+            
         }
         else
         {
-            nombres = nombres + "," + autor;
+            nombres = nombres + "," + *autor;
         }
     }
 
