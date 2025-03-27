@@ -36,6 +36,13 @@ void ArticuloRevista :: setExtracto(std::string ext){
     }
         return false;
 }*/
+char ArticuloRevista :: convertidorMinuscula(char c){
+    if (c >= 'A' && c <= 'Z'){ // 'A'= 65, 'Z'= 90
+        return c + 32 // diferencia entre ('a' y 'A')
+    }else{
+            return c
+        }
+}
 
 bool ArticuloRevista :: contienePalabra(std::string palabra){  
         int palabraLargo = palabra.length();                   
@@ -48,7 +55,7 @@ bool ArticuloRevista :: contienePalabra(std::string palabra){
         int i = 0; 
         while (i <= extractoLargo - palabraLargo) { // si es mayor ya no existe esa palabra
             int j = 0; 
-            while (j < palabraLargo && extracto[i + j] == palabra[j]) {
+            while (j < palabraLargo && convertidorMinuscula(extracto[i + j]) == convertidorMinuscula(palabra[j])) {
                 j++;
             }
             if (j == palabraLargo) {
