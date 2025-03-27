@@ -23,6 +23,7 @@ public:
     void setEditorial(std::string);
     void setPalabrasDestacadas(std::set<std::string>); // Esto capaz que requiere cambios para una implementacion
     virtual bool contienePalabra(std::string);
+    std::string convertirMayus(std::string &);
 };
 
 #endif

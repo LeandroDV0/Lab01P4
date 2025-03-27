@@ -65,11 +65,22 @@ void parte_a()
 
 void parte_b()
 {
+	std::set<std::string> temas;
+	temas.insert("Diseño");
+	temas.insert("OOP");
+	temas.insert("Class");
+
 	DTFecha fecha3 = DTFecha(20, 8, 2022);
-	Libro *libro1 = new Libro("10.2345/def456", "Patrones de Diseno en c++", fecha3, "Software Design", std::set<std::string>{"Diseno", "OOP", "Class"});
+	Libro *libro1 = new Libro("10.2345/def456", "Patrones de Diseno en c++", fecha3, "Software Design", temas);
+
+	std::set<std::string> temas2;
+	temas.insert("Diagramas");
+	temas.insert("UML");
+	temas.insert("Software");
+	temas.insert("Modelado");
 
 	DTFecha fecha4 = DTFecha(20, 8, 2022);
-	Libro *libro2 = new Libro("10.5678/mno345", "Guia de UML", fecha4, "IEEE", std::set<std::string>{"Diagramas", "UML", "Software", "Modelado"});
+	Libro *libro2 = new Libro("10.5678/mno345", "Guia de UML", fecha4, "IEEE", temas2);
 
 	// publicaciones.push_back(libro1);
 	// publicaciones.push_back(libro2); //Leandro: Dejo esto comentado porque voy a poner las funciones del main
@@ -106,8 +117,9 @@ void parte_e()
 
 void parte_f()
 {
-	for (Investigador *inv : investigadores)
+	for (std::list<Investigador *>::iterator it = investigadores.begin(); it != investigadores.end(); it++)
 	{
+		Investigador * inv = *it;
 		std::cout << inv->toString() << std::endl;
 	}
 }
@@ -138,7 +150,7 @@ void parte_g()
 void parte_h()
 {
 	Investigador *inv = coleccion_getInvestigador("0000-0003-1234-5678");
-	if (inv != nullptr)
+	if (inv != NULL)
 	{
 		DTFecha fecha = DTFecha(10, 12, 2023);
 		std::set<std::string> res = inv->listaPublicaciones(fecha, "UML");
@@ -153,7 +165,7 @@ void parte_i()
 {
 	{
 		Publicacion *aux = coleccion_getPublicacion("10.4567/jkl012");
-		if (aux != nullptr)
+		if (aux != NULL)
 		{
 			for (std::map<std::string, Investigador*>::iterator it = map_investigadores.begin(); it != map_investigadores.end(); ++it)
 	   		{
@@ -166,7 +178,7 @@ void parte_i()
 			}*/
 			coleccion_eliminarPublicacion(aux);
 			delete aux;
-			aux = nullptr;
+			aux = NULL;
 		}
 	}
 }
@@ -174,11 +186,10 @@ void parte_j()
 {
 
 	Investigador *inv = coleccion_getInvestigador("0000-0003-1234-5678");
-	if (inv != nullptr)
+	if (inv != NULL)
 	{
 		DTFecha fecha = DTFecha(1, 1, 2020);
 		std::set<std::string> res = inv->listaPublicaciones(fecha, "UML");
-		cout << "llegue3" << endl;
 		for (std::set<std::string>::const_iterator it = res.begin(); it != res.end(); it++)
 		{
 			std::cout << *it << std::endl;
@@ -198,14 +209,16 @@ void parte_k()
 
 void cleanUp()
 {
-	for (Publicacion *pub : publicaciones)
+	for (std::list<Publicacion *>::iterator it = publicaciones.begin(); it != publicaciones.end(); it++ )
 	{
+		Publicacion * pub = *it;
 		delete pub;
 	}
 	publicaciones.clear();
 
-	for (Investigador *inv : investigadores)
+	for (std::list<Investigador *>::iterator it = investigadores.begin(); it != investigadores.end(); it++)
 	{
+		Investigador * inv = *it;
 		delete inv;
 	}
 	investigadores.clear();

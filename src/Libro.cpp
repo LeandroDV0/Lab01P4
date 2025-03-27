@@ -30,15 +30,25 @@ void Libro::setEditorial(std::string nuevaEditorial) {
     editorial = nuevaEditorial;
 }
 
-bool Libro::contienePalabra(std::string palabra) {
-    for (size_t i = 0; i < palabra.length(); i++) {
-        palabra[i] = toupper(palabra[i]);
+std::string Libro :: convertirMayus(std::string &palabra)
+{
+    std::string copia = palabra;
+    int largoPalabra = palabra.length();
+    for(int i = 0; i < largoPalabra; i++)
+    {
+        copia[i] = toupper(palabra[i]);
     }
+    return copia;
+}
+
+
+bool Libro::contienePalabra(std::string palabra) 
+{
+    std::string palabrasDestacadasMayus = convertirMayus(palabra);
+    
     for (std::set<std::string>::iterator it = palabrasDestacadas.begin(); it != palabrasDestacadas.end(); ++it) {
-        std::string destacada = *it;
-        for (size_t i = 0; i < destacada.length(); i++) {
-            destacada[i] = toupper(destacada[i]);
-        }
+        std::string destacada = *it;    
+        std::string palabraDestacadaMayus = convertirMayus(destacada);
         if (palabra == destacada) {
             return true;
         }
