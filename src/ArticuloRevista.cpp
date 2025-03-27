@@ -38,9 +38,9 @@ void ArticuloRevista :: setExtracto(std::string ext){
 }*/
 char ArticuloRevista :: convertidorMinuscula(char c){
     if (c >= 'A' && c <= 'Z'){ // 'A'= 65, 'Z'= 90
-        return c + 32 // diferencia entre ('a' y 'A')
+        return c + 32; // diferencia entre ('a' y 'A')
     }else{
-            return c
+            return c;
         }
 }
 
