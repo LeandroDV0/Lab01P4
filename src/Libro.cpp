@@ -44,12 +44,11 @@ std::string Libro :: convertirMayus(std::string &palabra)
 
 bool Libro::contienePalabra(std::string palabra) 
 {
-    std::string palabrasDestacadasMayus = convertirMayus(palabra);
-    
-    for (std::set<std::string>::iterator it = palabrasDestacadas.begin(); it != palabrasDestacadas.end(); ++it) {
+    std::string palabraMayus = convertirMayus(palabra);
+    for (std::set<std::string>::const_iterator it = palabrasDestacadas.begin(); it != palabrasDestacadas.end(); ++it) {
         std::string destacada = *it;    
-        std::string palabraDestacadaMayus = convertirMayus(destacada);
-        if (palabra == destacada) {
+        std::string DestacadaMayus = convertirMayus(destacada);
+        if (palabraMayus == DestacadaMayus) {
             return true;
         }
     }

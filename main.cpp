@@ -207,6 +207,7 @@ void parte_k()
 	}
 }
 
+
 void cleanUp()
 {
 	for (std::list<Publicacion *>::iterator it = publicaciones.begin(); it != publicaciones.end(); it++ )
