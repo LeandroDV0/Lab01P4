@@ -9,10 +9,6 @@ Investigador::Investigador()
 
 Investigador::~Investigador()
 {
-    /*for (Publicacion *pub : publicaciones)
-    {
-        delete pub;
-    }*/ 
     publicaciones.clear();
 }
 
@@ -31,9 +27,10 @@ std::string Investigador::toString() const
 std::set<std::string> Investigador::listaPublicaciones(DTFecha fecha, std::string pal) const
 {
     std::set<std::string> resultado;
-    for (Publicacion *pub : this->publicaciones)
+    for (std::set<Publicacion *>::iterator it = this->publicaciones.begin(); it != this->publicaciones.end(); it++)
     {
-        if (pub != nullptr)
+        Publicacion* pub = *it;
+        if (pub != NULL)
         {
             if (pub->getFecha() > fecha && pub->contienePalabra(pal))
             {
