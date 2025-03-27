@@ -24,7 +24,7 @@ public:
     std::string getExtracto();
     void setRevista(std::string);
     void setExtracto(std::string);
-    char convertirMinuscula(char);
+    char convertidorMinuscula(char);
 };
 
 #endif
