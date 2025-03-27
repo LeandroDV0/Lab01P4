@@ -141,9 +141,9 @@ void parte_h()
 	{
 		DTFecha fecha = DTFecha(10, 12, 2023);
 		std::set<std::string> res = inv->listaPublicaciones(fecha, "UML");
-		for (const std::string &pub : res)
+		for (std::set<std::string>::iterator it = res.begin(); it != res.end(); ++it) 
 		{
-			std::cout << pub << std::endl;
+			std::cout << *it << std::endl;
 		}
 	}
 }
@@ -172,9 +172,9 @@ void parte_j()
 	{
 		DTFecha fecha = DTFecha(1, 1, 2020);
 		std::set<std::string> res = inv->listaPublicaciones(fecha, "UML");
-		for (const std::string &pub : res)
+		for (std::set<std::string>::iterator it = res.begin(); it != res.end(); ++it) 
 		{
-			std::cout << pub << std::endl;
+			std::cout << *it << std::endl;
 		}
 	}
 }

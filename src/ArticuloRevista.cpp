@@ -30,12 +30,6 @@ void ArticuloRevista :: setExtracto(std::string ext){
     this->extracto = ext;
 }
 
-/* bool ArticuloRevista :: contienePalabra(std::string palabra){
-    if (extracto.find(palabra) != std::string::npos) {
-        return true;
-    }
-        return false;
-}*/
 char ArticuloRevista :: convertidorMinuscula(char c){
     if (c >= 'A' && c <= 'Z'){ // 'A'= 65, 'Z'= 90
         return c + 32; // diferencia entre ('a' y 'A')
