@@ -21,5 +21,6 @@
         std::string getContenidoExtraido();
         void setURL(std::string);
         void setContenidoExtraido(std::string);
+        std::string convertirMayuscula(std::string &);
     };
 #endif

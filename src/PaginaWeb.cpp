@@ -36,11 +36,24 @@ void PaginaWeb::setContenidoExtraido(std::string contenidoExtraido)
     this->contenidoExtraido = contenidoExtraido;
 }
 
+std::string PaginaWeb :: convertirMayuscula(std::string &palabra)
+{
+    std::string copia = palabra;
+    int largoPalabra = palabra.length();
+    for(int i = 0; i < largoPalabra; i++)
+    {
+        copia[i] = toupper(palabra[i]);
+    }
+    return copia;
+}
+
 bool PaginaWeb ::contienePalabra( std::string palabra)
 { // se puede usar find()?
 
     int largoContenido = contenidoExtraido.length();
     int largoPalabra = palabra.length();
+    std::string contenidoExtraidoMayus = convertirMayuscula(contenidoExtraido);
+    std::string palabraMayus = convertirMayuscula(palabra);
 
     if (largoContenido >= largoPalabra)
     {
@@ -49,7 +62,7 @@ bool PaginaWeb ::contienePalabra( std::string palabra)
 
             int j = 0;
 
-            while (j < largoPalabra && contenidoExtraido[i + j] == palabra[j]) // caracter por caracter
+            while (j < largoPalabra && contenidoExtraidoMayus[i + j] == palabraMayus[j]) // caracter por caracter
                 j++;
 
             if (j == largoPalabra)
