@@ -155,10 +155,14 @@ void parte_i()
 		Publicacion *aux = coleccion_getPublicacion("10.4567/jkl012");
 		if (aux != nullptr)
 		{
-			for (auto &inv : map_investigadores) // Recorro el map con todos los investigadores eliminando la referencia a la publiacion de todos ellos
+			for (std::map<std::string, Investigador*>::iterator it = map_investigadores.begin(); it != map_investigadores.end(); ++it)
+	   		{
+		  		it->second->eliminarPublicacion(aux);
+	  		}
+			/*for (auto &inv : map_investigadores) // Recorro el map con todos los investigadores eliminando la referencia a la publiacion de todos ellos
 			{
 				inv.second->eliminarPublicacion(aux);
-			}
+			}*/
 			coleccion_eliminarPublicacion(aux);
 			delete aux;
 			aux = nullptr;
