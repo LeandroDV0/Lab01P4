@@ -9,6 +9,10 @@ Investigador::Investigador()
 
 Investigador::~Investigador()
 {
+    /*for (Publicacion *pub : publicaciones)
+    {
+        delete pub;
+    }*/ 
     publicaciones.clear();
 }
 
