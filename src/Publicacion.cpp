@@ -71,8 +71,9 @@ void Publicacion::setTitulo(string titulo)
 DTRefer Publicacion::getDT()
 {
     set<string> autores;
-    for (const Investigador *aut : this->autores)
+    for (std::set<Investigador *>::const_iterator it = this->autores.begin(); it != this->autores.end(); it++)
     {
+        Investigador* aut = *it;
         autores.insert(aut->getNombre());
     }
     return DTRefer(this->DOI, this->titulo, this->fecha, autores);
