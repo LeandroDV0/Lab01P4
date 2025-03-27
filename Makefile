@@ -1,6 +1,6 @@
 # Compilador
 CXX = g++
-CXXFLAGS = -Wall -std=c++11 -Iinclude
+CXXFLAGS = -Wall -std=c++98 -Iinclude
 
 # Directorios
 SRC_DIR = src
