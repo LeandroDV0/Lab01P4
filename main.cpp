@@ -88,8 +88,9 @@ void parte_c()
 
 void parte_d()
 {
-	for (Publicacion *pub : publicaciones)
+	for (std::list<Publicacion *>::const_iterator it = publicaciones.begin(); it != publicaciones.end(); it++ )
 	{
+		Publicacion* pub = *it;
 		DTRefer ref = pub->getDT();
 		std::cout << ref << std::endl;
 	}
@@ -141,7 +142,7 @@ void parte_h()
 	{
 		DTFecha fecha = DTFecha(10, 12, 2023);
 		std::set<std::string> res = inv->listaPublicaciones(fecha, "UML");
-		for (std::set<std::string>::iterator it = res.begin(); it != res.end(); ++it) 
+		for (std::set<std::string>::const_iterator it = res.begin(); it != res.end(); it++ )
 		{
 			std::cout << *it << std::endl;
 		}
@@ -172,7 +173,8 @@ void parte_j()
 	{
 		DTFecha fecha = DTFecha(1, 1, 2020);
 		std::set<std::string> res = inv->listaPublicaciones(fecha, "UML");
-		for (std::set<std::string>::iterator it = res.begin(); it != res.end(); ++it) 
+		cout << "llegue3" << endl;
+		for (std::set<std::string>::const_iterator it = res.begin(); it != res.end(); it++)
 		{
 			std::cout << *it << std::endl;
 		}
@@ -181,8 +183,9 @@ void parte_j()
 
 void parte_k()
 {
-	for (Publicacion *pub : publicaciones)
+	for (std::list<Publicacion *>::const_iterator it = publicaciones.begin(); it != publicaciones.end(); it++ )
 	{
+		Publicacion* pub = *it;
 		DTRefer ref = pub->getDT();
 		std::cout << ref << std::endl;
 	}
