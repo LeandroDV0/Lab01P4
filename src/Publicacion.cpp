@@ -22,6 +22,11 @@ Publicacion ::~Publicacion()
 {
     this->fecha.~DTFecha();
 
+    for (std::set<Investigador*>::iterator it = autores.begin(); it != autores.end(); ++it){
+        Investigador* inv = *it;
+        inv->eliminarPublicacion(this);
+    }
+
 }
 
 DTFecha Publicacion::getFecha()
