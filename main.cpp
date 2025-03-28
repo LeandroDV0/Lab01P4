@@ -176,19 +176,27 @@ void parte_i()
 		}
 	}
 }
-void parte_j()
-{
 
+void parte_h()
+{
 	Investigador *inv = coleccion_getInvestigador("0000-0003-1234-5678");
 	if (inv != NULL)
 	{
-		DTFecha fecha = DTFecha(1, 1, 2020);
+		DTFecha fecha = DTFecha(10, 2, 2024);
 		std::set<std::string> res = inv->listaPublicaciones(fecha, "UML");
+		bool hay = false;
 		for (std::set<std::string>::const_iterator it = res.begin(); it != res.end(); it++)
 		{
 			std::cout << *it << std::endl;
+			hay = true;
 		}
+
+		if (hay == false)
+	{
+		std::cout << "No tiene publicaciones" << std::endl;
 	}
+	}
+	
 }
 
 void parte_k()
