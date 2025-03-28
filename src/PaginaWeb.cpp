@@ -48,7 +48,7 @@ std::string PaginaWeb :: convertirMayuscula(std::string &palabra)
 }
 
 bool PaginaWeb ::contienePalabra( std::string palabra)
-{ // se puede usar find()?
+{ 
 
     int largoContenido = contenidoExtraido.length();
     int largoPalabra = palabra.length();
