@@ -23,6 +23,6 @@ public: // A los datatypes no se le pueden cambiar valores, asi que elimine los 
 	DTFecha getFecha() const;
 	std::set<std::string> getAutores() const;
 };
-// friend std::iostream& operator<<(std::iostream, DTRefer);
+
 std::ostream &operator<<(std::ostream &, const DTRefer &);
 #endif
