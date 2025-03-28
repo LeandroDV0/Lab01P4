@@ -87,3 +87,9 @@ void Publicacion::agregarAutor(Investigador *inv)
 {
     this->autores.insert(inv);
 }
+
+void Publicacion::eliminarInvestigador(Investigador *inv){
+    if(inv != NULL){
+        autores.erase(inv); // Si no esta pub, no pasa nada
+    }
+}

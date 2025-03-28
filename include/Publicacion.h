@@ -34,6 +34,7 @@ public:
     void setAutores(set<Investigador *>);
     set<Investigador *> getAutores();
     void agregarAutor(Investigador *);
+    void eliminarInvestigador(Investigador *);
 };
 // el .h parece correcto
 #endif

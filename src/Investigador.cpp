@@ -9,7 +9,10 @@ Investigador::Investigador()
 
 Investigador::~Investigador()
 {
-    publicaciones.clear();
+    for (std::set<Publicacion*>::iterator it = publicaciones.begin(); it != publicaciones.end(); ++it){
+        Publicacion* pub = *it;
+        pub->eliminarInvestigador(this);
+    }//Recorro el set de publicaciones eliminando la referencia a mi mismo de todas ellas
 }
 
 Investigador::Investigador(std::string ORCID, std::string nombre, std::string institucion)
