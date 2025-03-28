@@ -39,7 +39,7 @@ std::set<std::string> Investigador::listaPublicaciones(DTFecha fecha, std::strin
         }
     }
     return resultado;
-}
+} // nosotros asumimos que se listan las publicaciones a partit de el dia posterior de la fecha que le pasamos (no incluimos el dia)
 
 std::string Investigador::getORCID() const
 {
