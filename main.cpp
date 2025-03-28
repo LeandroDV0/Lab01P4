@@ -56,8 +56,6 @@ void parte_a()
 	DTFecha fecha2 = DTFecha(10, 2, 2024);
 	ArticuloRevista *art2 = new ArticuloRevista("10.4567/jkl012", "Utilidad de diagramas UML", fecha2, "Modelado de Software",
 												"Ejercicio empirico de como los diagramas UML pueden ayudar en el proceso y documentacion de software, cubriendo los tipos mas importantes utilizados, como clases.");
-	// publicaciones.push_back(art1); // esto agrega a la 'cola' el articulo
-	// publicaciones.push_back(art2); //Leandro: Dejo esto comentado porque voy a poner las funciones del main
 
 	coleccion_guardarPublicacion(art1);
 	coleccion_guardarPublicacion(art2);
@@ -82,9 +80,6 @@ void parte_b()
 	DTFecha fecha4 = DTFecha(20, 8, 2022);
 	Libro *libro2 = new Libro("10.5678/mno345", "Guia de UML", fecha4, "IEEE", temas2);
 
-	// publicaciones.push_back(libro1);
-	// publicaciones.push_back(libro2); //Leandro: Dejo esto comentado porque voy a poner las funciones del main
-
 	coleccion_guardarPublicacion(libro1);
 	coleccion_guardarPublicacion(libro2);
 }
@@ -93,7 +88,6 @@ void parte_c()
 {
 	DTFecha fecha5 = DTFecha(20, 10, 2024);
 	PaginaWeb *pagina = new PaginaWeb("www.umlparaprincipiantes.com", "En esta pagina web se presenta una gui completa sobre los diagramas UML, abordando los diagramas de casos de uso, de clases, de secuencia y de actividades.", "10.3456/ghi789", "Diagramas para Principiantes", fecha5);
-	// publicaciones.push_back(paginaWeb);
 	coleccion_guardarPublicacion(pagina);
 }
 
@@ -175,10 +169,7 @@ void parte_i()
 				}
 			}
 
-			/*for (auto &inv : map_investigadores) // Recorro el map con todos los investigadores eliminando la referencia a la publiacion de todos ellos
-			{
-				inv.second->eliminarPublicacion(aux);
-			}*/
+			
 			coleccion_eliminarPublicacion(aux);
 			delete aux;
 			aux = NULL;
